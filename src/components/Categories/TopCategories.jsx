@@ -1,0 +1,53 @@
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import Categorie from "./Categorie";
+const TopCategories = () => {
+  const [AddCate, setAddCate] = useState(Categorie);
+  return (
+    <>
+      <div className="container text-center my-5">
+        <h1 className="fw-semibold text-black">Shop By Categories</h1>
+        <p className="mt-3">Vist Our Shop To See Amazing Products</p>
+        <div className="m-auto my-5" style={{ maxWidth: "65px" }}>
+          <div className="border-green"></div>
+        </div>
+        <div className="row">
+          {AddCate.filter((categorie) => categorie.top === true).map(
+            (categorie) => (
+              <div
+                className="col-lg-3 col-md-6 col-sm-6 col-6 mt-2"
+                key={categorie.id}
+              >
+                <Link
+                  to={`/Categorie/${categorie.heading}`}
+                  className="link"
+                  style={{ textDecoration: "none" }}
+                >
+                  <div className="card d-flex justify-content-center align-items-center flex-column categories">
+                    <img
+                      src={categorie.ImgPath}
+                      id={categorie.id}
+                      className="card-img-top w-100 "
+                      alt={categorie.heading}
+                      style={{
+                        height: "200px",
+                        objectFit: "contain",
+                      }}
+                    />
+                    <div className="card-body">
+                      <h2 className="fs-5 text-center p-0">
+                        {categorie.heading}
+                      </h2>
+                    </div>
+                  </div>
+                </Link>
+              </div>
+            )
+          )}
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default TopCategories;
