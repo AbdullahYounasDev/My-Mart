@@ -17,7 +17,7 @@ const Hero = () => {
               <Link
                 className="text-white"
                 aria-current="page"
-                to="/Product"
+                to="/My-Mart/Product"
                 style={{ textDecoration: "none" }}
               >
                 Shop Now
@@ -27,7 +27,7 @@ const Hero = () => {
               <Link
                 className="text-white"
                 aria-current="page"
-                to="/Contact"
+                to="/My-Mart/Contact"
                 style={{ textDecoration: "none" }}
               >
                 Contact Us

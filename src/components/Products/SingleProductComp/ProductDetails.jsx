@@ -46,7 +46,7 @@ const ProductDetails = ({ productId, productName }) => {
         <Link
           style={{ textDecoration: "none" }}
           className="text-black"
-          to={`/Product`}
+          to={`/v/Product`}
         >
           Product
         </Link>
@@ -54,7 +54,7 @@ const ProductDetails = ({ productId, productName }) => {
         <Link
           style={{ textDecoration: "none" }}
           className="text-black"
-          to={`/Categorie/${SelectProd.categorie}`}
+          to={`/My-Mart/Categorie/${SelectProd.categorie}`}
         >
           {SelectProd.categorie}
         </Link>
@@ -62,7 +62,7 @@ const ProductDetails = ({ productId, productName }) => {
         <Link
           style={{ textDecoration: "none" }}
           className="text-black"
-          to={`/Product/${SelectProd.heading}/${SelectProd.id}`}
+          to={`/My-Mart/Product/${SelectProd.heading}/${SelectProd.id}`}
         >
           {SelectProd.heading}
         </Link>

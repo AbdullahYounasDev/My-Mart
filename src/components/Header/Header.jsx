@@ -36,7 +36,10 @@ const Header = () => {
       <div className="w-100">
         <nav className="navbar navbar-expand-lg bg-body-tertiary border-bottom">
           <div className="container-fluid">
-            <Link className="navbar-brand fs-1 fw-semibold main-head" to="/">
+            <Link
+              className="navbar-brand fs-1 fw-semibold main-head"
+              to="/My-Mart"
+            >
               MyMart<span className="text-green fs-1 fw-bold">.</span>
             </Link>
             <div className="d-flex justify-center align-items-center">
@@ -84,7 +87,11 @@ const Header = () => {
               {/* Navigation */}
               <ul className="navbar-nav mb-2 mb-lg-0 gap-lg-5 fw-semibold gap-3 fs-5">
                 <li className="nav-item">
-                  <Link className="nav-link active" aria-current="page" to="/">
+                  <Link
+                    className="nav-link active"
+                    aria-current="page"
+                    to="/My-Mart"
+                  >
                     Home
                   </Link>
                 </li>
@@ -92,7 +99,7 @@ const Header = () => {
                   <Link
                     className="nav-link active"
                     aria-current="page"
-                    to="/Product"
+                    to="/My-Mart/Product"
                   >
                     Product
                   </Link>
@@ -101,7 +108,7 @@ const Header = () => {
                   <Link
                     className="nav-link active"
                     aria-current="page"
-                    to="/About"
+                    to="/My-Mart/About"
                   >
                     About
                   </Link>
@@ -110,7 +117,7 @@ const Header = () => {
                   <Link
                     className="nav-link active"
                     aria-current="page"
-                    to="/Contact"
+                    to="/My-Mart/Contact"
                   >
                     Contact
                   </Link>

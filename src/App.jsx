@@ -19,22 +19,21 @@ function App() {
     <Router>
       <Header />
       <Routes>
-        <Route exact path="/" element={<Home />} />
-        <Route exact path="/Product" element={<Products />} />
-        <Route exact path="/Categorie" element={<Categories />} />
+        <Route exact path="/My-Mart" element={<Home />} />
+        <Route exact path="/My-Mart/Product" element={<Products />} />
+        <Route exact path="/My-Mart/Categorie" element={<Categories />} />
         <Route
           exact
-          path="/Categorie/:categorieName"
+          path="/My-Mart/Categorie/:categorieName"
           element={<SingleCategorie />}
         />
         <Route
           exact
-          path="/Product/:productName/:productId"
+          path="/My-Mart/Product/:productName/:productId"
           element={<SingleProduct />}
         />
-        <Route exact path="/Blog" element={<Blog />} />
-        <Route exact path="/About" element={<About />} />
-        <Route exact path="/Contact" element={<Contact />} />
+        <Route exact path="/My-Mart/About" element={<About />} />
+        <Route exact path="/My-Mart/Contact" element={<Contact />} />
         {/* <Route path="*" element={<PageNotFound />} /> */}
       </Routes>
       <Footer />

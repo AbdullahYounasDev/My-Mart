@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Product from "../Product";
 import Categorie from "../../Categories/Categorie";
 import { Link } from "react-router-dom";
-Link;
 
 const CatRelProd = ({ productId, productName }) => {
   // if routes cant match then return null
@@ -49,7 +48,7 @@ const CatRelProd = ({ productId, productName }) => {
           {randomFiveProducts.map((mapProduct) => (
             <div className="mt-4" key={mapProduct.id}>
               <Link
-                to={`/Product/${mapProduct.heading}/${mapProduct.id}`}
+                to={`/My-Mart/Product/${mapProduct.heading}/${mapProduct.id}`}
                 className="link text-white fw-semibold m-0 p-0 text-center"
                 style={{ textDecoration: "none", fontSize: "14px" }}
               >

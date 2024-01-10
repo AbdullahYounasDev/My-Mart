@@ -19,7 +19,7 @@ const TopCategories = () => {
                 key={categorie.id}
               >
                 <Link
-                  to={`/Categorie/${categorie.heading}`}
+                  to={`/My-Mart/Categorie/${categorie.heading}`}
                   className="link"
                   style={{ textDecoration: "none" }}
                 >

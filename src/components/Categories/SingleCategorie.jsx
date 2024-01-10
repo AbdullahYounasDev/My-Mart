@@ -43,7 +43,7 @@ const SingleCategorie = () => {
           ).map((mapProduct) => (
             <div className="mt-4" key={mapProduct.id}>
               <Link
-                to={`/Product/${mapProduct.heading}/${mapProduct.id}`}
+                to={`/My-Mart/Product/${mapProduct.heading}/${mapProduct.id}`}
                 className="link text-white fw-semibold m-0 p-0 text-center"
                 style={{ textDecoration: "none", fontSize: "14px" }}
               >

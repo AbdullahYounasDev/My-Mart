@@ -33,7 +33,7 @@ const WhishList = ({ setOpenWhish, OpenWhish }) => {
         {WhishProduct.map((mapProduct) => (
           <div key={mapProduct.id}>
             <Link
-              to={`/Product/${mapProduct.heading}/${mapProduct.id}`}
+              to={`/My-Mart/Product/${mapProduct.heading}/${mapProduct.id}`}
               style={{ textDecoration: "none" }}
             >
               <div

@@ -25,7 +25,7 @@ const SearchResDiv = ({ setSearch, setSearchMe }) => {
         >
           {searchResults.map((mapProduct) => (
             <Link
-              to={`/Product/${mapProduct.heading}/${mapProduct.id}`}
+              to={`/My-Mart/Product/${mapProduct.heading}/${mapProduct.id}`}
               style={{ textDecoration: "none" }}
             >
               <div

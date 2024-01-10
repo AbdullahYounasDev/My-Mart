@@ -71,7 +71,11 @@ const Footer = () => {
             </h3>
             <ul className="navbar-nav fw-medium gap-1 fs-5 mt-4 text-center">
               <li className="nav-item">
-                <Link className="nav-link active" aria-current="page" to="/">
+                <Link
+                  className="nav-link active"
+                  aria-current="page"
+                  to="/My-Mart"
+                >
                   Home
                 </Link>
               </li>
@@ -79,7 +83,7 @@ const Footer = () => {
                 <Link
                   className="nav-link active"
                   aria-current="page"
-                  to="/Product"
+                  to="/My-Mart/Product"
                 >
                   Product
                 </Link>
@@ -88,16 +92,7 @@ const Footer = () => {
                 <Link
                   className="nav-link active"
                   aria-current="page"
-                  to="/Blog"
-                >
-                  Blog
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link
-                  className="nav-link active"
-                  aria-current="page"
-                  to="/About"
+                  to="/My-Mart/About"
                 >
                   About
                 </Link>
@@ -106,7 +101,7 @@ const Footer = () => {
                 <Link
                   className="nav-link active"
                   aria-current="page"
-                  to="/Contact"
+                  to="/My-Mart/Contact"
                 >
                   Contact
                 </Link>
@@ -124,7 +119,7 @@ const Footer = () => {
                   <Link
                     className="nav-link active"
                     aria-current="page"
-                    to={`/Categorie/${categorie.heading}`}
+                    to={`/My-Mart/Categorie/${categorie.heading}`}
                   >
                     {categorie.heading}
                   </Link>

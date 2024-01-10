@@ -17,7 +17,7 @@ const FeatProducts = () => {
           {filterProduct.map((mapProduct) => (
             <div className="mt-4" key={mapProduct.id}>
               <Link
-                to={`/Product/${mapProduct.heading}/${mapProduct.id}`}
+                to={`/My-Mart/Product/${mapProduct.heading}/${mapProduct.id}`}
                 className="link text-white fw-semibold"
                 style={{ textDecoration: "none", fontSize: "14px" }}
               >
