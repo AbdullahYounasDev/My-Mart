@@ -56,6 +56,15 @@ const Header = () => {
                   </button>
                 </div>
                 <div>
+                  <button
+                    to="#"
+                    className="border-0 bg-transparent"
+                    onClick={HandleWish}
+                  >
+                    <FontAwesomeIcon icon={faHeart} className="icons" />
+                  </button>
+                </div>
+                <div>
                   <button className="border-0 bg-transparent">
                     <FontAwesomeIcon icon={faShoppingCart} className="icons" />
                   </button>
@@ -66,63 +75,79 @@ const Header = () => {
                   </button>
                 </div>
               </div>
-              <button
-                className="navbar-toggler border-0"
-                style={{ boxShadow: "none" }}
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-              >
-                <span className="navbar-toggler-icon text-black"></span>
-              </button>
             </div>
-            <div
-              className="collapse navbar-collapse d-flex justify-content-center align-items-center"
-              id="navbarSupportedContent"
+            <button
+              className="navbar-toggler border-0 shadow-none"
+              type="button"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#offcanvasNavbar"
+              aria-controls="offcanvasNavbar"
+              aria-label="Toggle navigation"
             >
-              {/* Icons for Md to Sm */}
-              {/* Navigation */}
-              <ul className="navbar-nav mb-2 mb-lg-0 gap-lg-5 fw-semibold gap-3 fs-5">
-                <li className="nav-item">
-                  <Link
-                    className="nav-link active"
-                    aria-current="page"
-                    to="/My-Mart"
-                  >
-                    Home
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link
-                    className="nav-link active"
-                    aria-current="page"
-                    to="/My-Mart/Product"
-                  >
-                    Product
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link
-                    className="nav-link active"
-                    aria-current="page"
-                    to="/My-Mart/About"
-                  >
-                    About
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link
-                    className="nav-link active"
-                    aria-current="page"
-                    to="/My-Mart/Contact"
-                  >
-                    Contact
-                  </Link>
-                </li>
-              </ul>
+              <span className="navbar-toggler-icon color-black border-0 shadow-none"></span>
+            </button>
+            <div
+              className="offcanvas offcanvas-end"
+              tabindex="-1"
+              id="offcanvasNavbar"
+              aria-labelledby="offcanvasNavbarLabel"
+            >
+              <div className="offcanvas-header">
+                <Link
+                  className="navbar-brand fs-1 fw-semibold main-head"
+                  to="/My-Mart"
+                >
+                  MyMart<span className="text-green fs-1 fw-bold">.</span>
+                </Link>
+                <button
+                  type="button"
+                  className="btn-close border-0 shadow-none"
+                  data-bs-dismiss="offcanvas"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div className="offcanvas-body justify-content-center align-items-center">
+                {/* Icons for Md to Sm */}
+                {/* Navigation */}
+                <ul className="navbar-nav mb-2 mb-lg-0 gap-lg-5 fw-semibold gap-3 fs-5 d-flex justify-content-center align-items-center">
+                  <li className="nav-item">
+                    <Link
+                      className="nav-link active"
+                      aria-current="page"
+                      to="/My-Mart"
+                    >
+                      Home
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link
+                      className="nav-link active"
+                      aria-current="page"
+                      to="/My-Mart/Product"
+                    >
+                      Product
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link
+                      className="nav-link active"
+                      aria-current="page"
+                      to="/My-Mart/About"
+                    >
+                      About
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link
+                      className="nav-link active"
+                      aria-current="page"
+                      to="/My-Mart/Contact"
+                    >
+                      Contact
+                    </Link>
+                  </li>
+                </ul>
+              </div>
             </div>
             {/* Icons for Lg */}
             <div className="d-none d-lg-flex justify-center align-items-center gap-2 ">
