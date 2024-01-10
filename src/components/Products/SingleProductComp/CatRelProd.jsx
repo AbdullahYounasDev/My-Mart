@@ -38,12 +38,12 @@ const CatRelProd = ({ productId, productName }) => {
   // Take the first 5 products
   const randomFiveProducts = shuffledProducts.slice(0, 4);
   return (
-    <div className="container text-center my-5 py-5">
+    <div className="container-fluid text-center my-5 py-5 px-0 mx-0">
       <h1 className="fw-semibold text-black">Related Products</h1>
       <div className="m-auto my-5" style={{ maxWidth: "65px" }}>
         <div className="border-green"></div>
       </div>
-      <div className="container text-center my-5">
+      <div className="container-fluid text-center my-5 p-0 mx-0">
         <div className="row row-cols-lg-4 row-cols-md-3 row-cols-2">
           {randomFiveProducts.map((mapProduct) => (
             <div className="mt-4" key={mapProduct.id}>
