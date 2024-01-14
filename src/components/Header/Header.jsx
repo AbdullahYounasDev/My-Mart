@@ -42,40 +42,7 @@ const Header = () => {
             >
               MyMart<span className="text-green fs-1 fw-bold">.</span>
             </Link>
-            <div className="d-flex justify-center align-items-center">
-              <div
-                className="d-flex d-lg-none justify-center align-items-center gap-2"
-                style={{ marginTop: "5px" }}
-              >
-                <div>
-                  <button
-                    className="border-0 bg-transparent"
-                    onClick={GetSearchBar}
-                  >
-                    <FontAwesomeIcon icon={faSearch} className="icons" />
-                  </button>
-                </div>
-                <div>
-                  <button
-                    to="#"
-                    className="border-0 bg-transparent"
-                    onClick={HandleWish}
-                  >
-                    <FontAwesomeIcon icon={faHeart} className="icons" />
-                  </button>
-                </div>
-                <div>
-                  <button className="border-0 bg-transparent">
-                    <FontAwesomeIcon icon={faShoppingCart} className="icons" />
-                  </button>
-                </div>
-                <div>
-                  <button className="border-0 bg-transparent">
-                    <FontAwesomeIcon icon={faUser} className="icons" />
-                  </button>
-                </div>
-              </div>
-            </div>
+
             <button
               className="navbar-toggler border-0 shadow-none"
               type="button"
@@ -84,7 +51,7 @@ const Header = () => {
               aria-controls="offcanvasNavbar"
               aria-label="Toggle navigation"
             >
-              <span className="navbar-toggler-icon color-black border-0 shadow-none"></span>
+              <span className="navbar-toggler-icon color-black icons fs-5 border-0 shadow-none"></span>
             </button>
             <div
               className="offcanvas offcanvas-end"
@@ -109,6 +76,38 @@ const Header = () => {
               <div className="offcanvas-body justify-content-center align-items-center">
                 {/* Icons for Md to Sm */}
                 {/* Navigation */}
+                <div className="d-flex d-lg-none justify-content-center align-items-center gap-2 mb-4">
+                  <div>
+                    <button
+                      className="border-0 bg-transparent"
+                      onClick={GetSearchBar}
+                    >
+                      <FontAwesomeIcon icon={faSearch} className="icons" />
+                    </button>
+                  </div>
+                  <div>
+                    <button
+                      to="#"
+                      className="border-0 bg-transparent"
+                      onClick={HandleWish}
+                    >
+                      <FontAwesomeIcon icon={faHeart} className="icons" />
+                    </button>
+                  </div>
+                  <div>
+                    <button className="border-0 bg-transparent">
+                      <FontAwesomeIcon
+                        icon={faShoppingCart}
+                        className="icons"
+                      />
+                    </button>
+                  </div>
+                  <div>
+                    <button className="border-0 bg-transparent">
+                      <FontAwesomeIcon icon={faUser} className="icons" />
+                    </button>
+                  </div>
+                </div>
                 <ul className="navbar-nav mb-2 mb-lg-0 gap-lg-5 fw-semibold gap-3 fs-5 d-flex justify-content-center align-items-center">
                   <li className="nav-item">
                     <Link
@@ -150,7 +149,7 @@ const Header = () => {
               </div>
             </div>
             {/* Icons for Lg */}
-            <div className="d-none d-lg-flex justify-center align-items-center gap-2 ">
+            <div className="d-none d-lg-flex justify-content-center align-items-center gap-2 ">
               <div>
                 <button
                   to="#"

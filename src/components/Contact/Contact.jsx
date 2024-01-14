@@ -42,7 +42,7 @@ const Contact = () => {
         </div>
       </div>
       <div className="container p-5 d-flex flex-column justify-content-center align-items-center ">
-        <div className="d-flex flex-column justify-content-center align-items-center w-100  p-5">
+        <div className="d-flex flex-column justify-content-center align-items-center w-100  p-md-5">
           <h2 className="text-center">Contact Form</h2>
           <p className="text-center">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni
@@ -85,7 +85,7 @@ const Contact = () => {
                 ></textarea>
               </div>
 
-              <div className="text-black d-inline-flex flex-row justify-content-between align-items-center w-100 flex-wrap">
+              <div className="text-black d-inline-flex flex-row justify-content-between align-items-center w-100 flex-wrap gap-2">
                 <input
                   className="main-btn rounded-5 border p-2 text-white main-btn"
                   type="submit"

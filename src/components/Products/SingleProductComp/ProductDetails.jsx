@@ -46,7 +46,7 @@ const ProductDetails = ({ productId, productName }) => {
         <Link
           style={{ textDecoration: "none" }}
           className="text-black"
-          to={`/v/Product`}
+          to={`/My-Mart/Product`}
         >
           Product
         </Link>

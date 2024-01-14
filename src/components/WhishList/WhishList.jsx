@@ -15,7 +15,7 @@ const WhishList = ({ setOpenWhish, OpenWhish }) => {
     return product.featured == true;
   });
   return (
-    <div className="position-absolute sub-whish-list border border-2 start-0 top-0 px-3 py-4">
+    <div className="position-absolute  sub-whish-list border border-2 start-0 top-0 px-3 py-4">
       <div className="d-flex justify-content-between align-items-center">
         <h3 className="fw-bold">
           Whish List<span className="text-green fs-3 fw-bold">.</span>
