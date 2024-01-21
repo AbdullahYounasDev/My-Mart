@@ -61,7 +61,14 @@ const Products = () => {
                     >
                       {mapProduct.categorie}
                     </h3>
-                    <h2 className="fs-5 text-center p-0 fw-semibold">
+                    <h2
+                      className="fs-5 text-center p-0 fw-semibold"
+                      style={{
+                        textOverflow: "ellipsis",
+                        overflow: "hidden",
+                        whiteSpace: "nowrap",
+                      }}
+                    >
                       {mapProduct.heading}
                     </h2>
                     <div className="d-flex justify-content-between align-items-center w-100">
