@@ -69,9 +69,11 @@ const ProductDetails = ({ productId, productName }) => {
         </Link>
       </div>
       <h1 className="fw-semibold text-black">{SelectProd.heading}</h1>
-      <h3 className="fs-4 text-green fw-bold">{SelectProd.categorie}</h3>
-      <p className="fs-5 text-black ">{SelectProd.smallDes}</p>
-      <h1 className="fs-2 text-black fw-bold">{prodPrice}.00 Rs</h1>
+      <h3 className="fs-4 text-green fw-bold fs-14 m-0">
+        {SelectProd.categorie}
+      </h3>
+      <p className="fs-5 text-black fs-14 m-0">{SelectProd.smallDes}</p>
+      <h1 className="fs-2 text-black fw-bold fs-20">{prodPrice}.00 Rs</h1>
       <div className="d-flex flex-wrap gap-4">
         <div className="d-flex justify-content-center align-items-center gap-2">
           <button
