@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Product from "../Product";
 import Categorie from "../../Categories/Categorie";
 import { Link } from "react-router-dom";
+import AddtoCart from "../../AddToCart/AddtoCart";
 
 const CatRelProd = ({ productId, productName }) => {
   // if routes cant match then return null
@@ -73,9 +74,9 @@ const CatRelProd = ({ productId, productName }) => {
                     <h2
                       className="fs-5 text-center p-0 fw-semibold"
                       style={{
-                        textOverflow: "ellipsis",
-                        overflow: "hidden",
                         whiteSpace: "nowrap",
+                        overflow: "hidden",
+                        textOverflow: "ellipsis",
                       }}
                     >
                       {mapProduct.heading}
@@ -98,9 +99,7 @@ const CatRelProd = ({ productId, productName }) => {
                         </div>
                       </div>
                     </div>
-                    <button className="rounded-5 border-0 p-2 px-4 text-white text-center main-btn fs-5 shadow-lg my-2 d-flex align-items-center justify-content-center">
-                      Add to Cart
-                    </button>
+                    <AddtoCart />
                   </div>
                 </div>
               </Link>

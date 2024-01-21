@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Product from "./Product";
+import AddtoCart from "../AddToCart/AddtoCart";
 const Products = () => {
   const [AddProd, setAddProd] = useState(Product);
   // Add to Whish List
@@ -64,9 +65,9 @@ const Products = () => {
                     <h2
                       className="fs-5 text-center p-0 fw-semibold"
                       style={{
-                        textOverflow: "ellipsis",
-                        overflow: "hidden",
                         whiteSpace: "nowrap",
+                        overflow: "hidden",
+                        textOverflow: "ellipsis",
                       }}
                     >
                       {mapProduct.heading}
@@ -93,9 +94,7 @@ const Products = () => {
                         </div>
                       </div>
                     </div>
-                    <button className="rounded-5 border-0 p-2 px-4 text-white text-center main-btn fs-5 shadow-lg my-2 d-flex align-items-center justify-content-center">
-                      Add to Cart
-                    </button>
+                    <AddtoCart />
                   </div>
                 </div>
               </Link>

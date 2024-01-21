@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Product from "../Product";
 import PageNotFound from "../../Page Not Found/PageNotFound";
+import AddtoCart from "../../AddToCart/AddtoCart";
 
 const ProductDetails = ({ productId, productName }) => {
   // if routes cant match then return null
@@ -42,7 +43,7 @@ const ProductDetails = ({ productId, productName }) => {
       className="d-flex flex-column gap-4 justify-content-center"
       style={{ height: "100%" }}
     >
-      <div className="d-flex fs-5 fw-bold text-black gap-3 ">
+      <div className="d-flex fs-14 fw-bold text-black gap-3 ">
         <Link
           style={{ textDecoration: "none" }}
           className="text-black"
@@ -74,28 +75,26 @@ const ProductDetails = ({ productId, productName }) => {
       <div className="d-flex flex-wrap gap-4">
         <div className="d-flex justify-content-center align-items-center gap-2">
           <button
-            className="rounded-start-pill border py-2 px-3 text-white main-btn fs-5"
+            className="fs-14 rounded-start-pill border py-2 px-3 text-white main-btn fs-5"
             onClick={incAmount}
           >
             +
           </button>
           <input
             type="input"
-            className=" px-2 py-2 m-0 text-center"
+            className=" px-2 py-2 m-0 text-center fs-14"
             value={amount}
             style={{ width: "70px", outline: "none", borderRadius: "10px" }}
             readOnly
           />
           <button
-            className="rounded-end-pill border py-2 px-3 text-white main-btn fs-5"
+            className="fs-14 rounded-end-pill border py-2 px-3 text-white main-btn fs-5"
             onClick={DecAmount}
           >
             -
           </button>
         </div>
-        <button className="rounded-5 border py-2 px-3 text-white main-btn fs-5">
-          Add to Cart
-        </button>
+        <AddtoCart />
       </div>
     </div>
   );
