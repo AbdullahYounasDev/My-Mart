@@ -68,7 +68,7 @@ const ProductDetails = ({ productId, productName }) => {
           {SelectProd.heading}
         </Link>
       </div>
-      <h1 className="fw-semibold text-black">{SelectProd.heading}</h1>
+      <h1 className="fw-semibold text-black fs-20">{SelectProd.heading}</h1>
       <h3 className="fs-4 text-green fw-bold fs-14 m-0">
         {SelectProd.categorie}
       </h3>
