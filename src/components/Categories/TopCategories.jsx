@@ -27,18 +27,19 @@ const TopCategories = () => {
                     <img
                       src={categorie.ImgPath}
                       id={categorie.id}
-                      className="card-img-top w-100 "
+                      className="card-img-top w-100 catImag"
                       alt={categorie.heading}
                       style={{
                         height: "200px",
                         objectFit: "contain",
                       }}
                     />
-                    <div className="card-body">
-                      <h2 className="fs-5 text-center p-0">
-                        {categorie.heading}
-                      </h2>
-                    </div>
+                    <h2
+                      className="fs-5 text-center p-sm-2 p-0 "
+                      style={{ margin: "2px" }}
+                    >
+                      {categorie.heading}
+                    </h2>
                   </div>
                 </Link>
               </div>

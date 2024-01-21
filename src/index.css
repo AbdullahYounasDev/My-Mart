@@ -30,4 +30,10 @@
   .fs-20 {
     font-size: 20px !important;
   }
+  .fs-25 {
+    font-size: 25px !important;
+  }
+  .catImag {
+    height: 150px !important;
+  }
 }

@@ -11,7 +11,7 @@ const CustomerSat = () => {
         <div className="row">
           <div className="col-lg-3 col-6 d-flex justify-content-center align-items-center gap-2 flex-column-reverse text-center p-4">
             <div>
-              <h2 className="fs-5 fs-lg-4 text-black fw-medium">
+              <h2 className="fs-5 fs-lg-4 text-black fw-medium fs-14">
                 Fast Delivery
               </h2>
             </div>
@@ -21,7 +21,7 @@ const CustomerSat = () => {
           </div>
           <div className="col-lg-3 col-6 d-flex justify-content-center align-items-center gap-2 flex-column-reverse text-center p-4">
             <div>
-              <h2 className="fs-5 fs-lg-4 text-black fw-medium">
+              <h2 className="fs-5 fs-lg-4 text-black fw-medium fs-14">
                 3 Star Rating
               </h2>
             </div>
@@ -31,7 +31,7 @@ const CustomerSat = () => {
           </div>
           <div className="col-lg-3 col-6 d-flex justify-content-center align-items-center gap-2 flex-column-reverse text-center p-4">
             <div>
-              <h2 className="fs-5 fs-lg-4 text-black fw-medium">
+              <h2 className="fs-5 fs-lg-4 text-black fw-medium fs-14">
                 Happy Clients
               </h2>
             </div>
@@ -41,7 +41,9 @@ const CustomerSat = () => {
           </div>
           <div className="col-lg-3 col-6 d-flex justify-content-center align-items-center gap-2 flex-column-reverse text-center p-4">
             <div>
-              <h2 className="fs-5 fs-lg-4 text-black fw-medium">24H Support</h2>
+              <h2 className="fs-5 fs-lg-4 text-black fw-medium fs-14">
+                24H Support
+              </h2>
             </div>
             <div>
               <img src={TwentyFour} alt="" className="w-50" />
