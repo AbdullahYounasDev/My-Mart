@@ -3,6 +3,7 @@ import Product from "../Product";
 import Categorie from "../../Categories/Categorie";
 import { Link } from "react-router-dom";
 import AddtoCart from "../../AddToCart/AddtoCart";
+import WhishIcon from "../../WhishList/WhishIcon";
 
 const CatRelProd = ({ productId, productName }) => {
   // if routes cant match then return null
@@ -90,14 +91,7 @@ const CatRelProd = ({ productId, productName }) => {
                           {mapProduct.price}.00 Rs
                         </h4>
                       </div>
-                      <div>
-                        <div
-                          className="heart-icon fs-2 "
-                          style={{ fontFamily: "system-ui", color: "grey" }}
-                        >
-                          &#x2665;
-                        </div>
-                      </div>
+                      <WhishIcon />
                     </div>
                     <AddtoCart />
                   </div>

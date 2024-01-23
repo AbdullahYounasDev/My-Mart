@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Product from "./Product";
 import AddtoCart from "../AddToCart/AddtoCart";
+import WhishIcon from "../WhishList/WhishIcon";
 
 const FeatProducts = () => {
   const [AddProd, setAddProd] = useState(Product);
@@ -59,17 +60,7 @@ const FeatProducts = () => {
                           {mapProduct.price}.00 Rs
                         </h4>
                       </div>
-                      <div>
-                        <div
-                          className="heart-icon fs-2"
-                          style={{
-                            fontFamily: "system-ui",
-                            color: "gray",
-                          }}
-                        >
-                          &#x2665;
-                        </div>
-                      </div>
+                      <WhishIcon mapProduct={mapProduct} />
                     </div>
                     <AddtoCart />
                   </div>

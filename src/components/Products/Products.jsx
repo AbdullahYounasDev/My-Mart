@@ -2,31 +2,10 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Product from "./Product";
 import AddtoCart from "../AddToCart/AddtoCart";
+import WhishIcon from "../WhishList/WhishIcon";
 const Products = () => {
   const [AddProd, setAddProd] = useState(Product);
-  // Add to Whish List
-  const LikedMe = (e, productId) => {
-    e.preventDefault();
 
-    // Create a copy of the AddProd array
-    const updatedProducts = AddProd.map((product) => {
-      if (product.id === productId) {
-        // Update the whishlist property for the specific product
-        return { ...product, whishlist: !product.whishlist };
-      }
-      console.log(product);
-      return product;
-    });
-
-    // Set the state with the updated array
-    setAddProd(updatedProducts);
-  };
-
-  // Determine the color based on whishlist property
-  const heartColor = (productId) => {
-    const product = AddProd.find((prod) => prod.id === productId);
-    return product && product.whishlist ? "#33cccc" : "gray";
-  };
   return (
     <>
       <div className="prod-sec container-fluid text-center py-5">
@@ -81,18 +60,7 @@ const Products = () => {
                           {mapProduct.price}.00 Rs
                         </h4>
                       </div>
-                      <div>
-                        <div
-                          className="heart-icon fs-2 "
-                          style={{
-                            fontFamily: "system-ui",
-                            color: heartColor(mapProduct.id),
-                          }}
-                          onClick={(e) => LikedMe(e, mapProduct.id)}
-                        >
-                          &#x2665;
-                        </div>
-                      </div>
+                      <WhishIcon mapProduct={mapProduct} />
                     </div>
                     <AddtoCart />
                   </div>

@@ -55,7 +55,7 @@ const Header = () => {
             </button>
             <div
               className="offcanvas offcanvas-end"
-              tabindex="-1"
+              tabIndex="-1"
               id="offcanvasNavbar"
               aria-labelledby="offcanvasNavbarLabel"
             >
@@ -76,7 +76,7 @@ const Header = () => {
               <div className="offcanvas-body justify-content-center align-items-center">
                 {/* Icons for Md to Sm */}
                 {/* Navigation */}
-                <div className="d-flex d-lg-none justify-content-center align-items-center gap-2 mb-4">
+                <div className="d-flex d-lg-none justify-content-center align-items-center gap-3 mb-4">
                   <div>
                     <button
                       className="border-0 bg-transparent"
@@ -149,7 +149,7 @@ const Header = () => {
               </div>
             </div>
             {/* Icons for Lg */}
-            <div className="d-none d-lg-flex justify-content-center align-items-center gap-2 ">
+            <div className="d-none d-lg-flex justify-content-center align-items-center gap-3 ">
               <div>
                 <button
                   to="#"

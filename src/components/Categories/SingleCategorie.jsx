@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import Categorie from "./Categorie";
 import Product from "../Products/Product";
 import AddtoCart from "../AddToCart/AddtoCart";
+import WhishIcon from "../WhishList/WhishIcon";
 
 const SingleCategorie = () => {
   const { categorieName } = useParams();
@@ -85,14 +86,7 @@ const SingleCategorie = () => {
                           {mapProduct.price}.00 Rs
                         </h4>
                       </div>
-                      <div>
-                        <div
-                          className="heart-icon fs-2 "
-                          style={{ fontFamily: "system-ui", color: "grey" }}
-                        >
-                          &#x2665;
-                        </div>
-                      </div>
+                      <WhishIcon mapProduct={mapProduct} />
                     </div>
                     <AddtoCart />
                   </div>
