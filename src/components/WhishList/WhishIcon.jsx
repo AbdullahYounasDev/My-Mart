@@ -25,7 +25,7 @@ const WhishIcon = ({ mapProduct }) => {
       >
         <FontAwesomeIcon
           icon={faHeart}
-          className="icons"
+          className="icons-30"
           style={{ color: iconColor }}
         />
       </button>

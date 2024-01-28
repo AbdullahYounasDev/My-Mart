@@ -23,6 +23,11 @@
   font-size: 16px !important;
 }
 /* For Header */
+.icons-30 {
+  height: 30px !important;
+  color: black;
+  transition: 0.4s ease-in-out;
+}
 .icons {
   height: 20px !important;
   color: black;

@@ -46,7 +46,7 @@ const CatRelProd = ({ productId, productName }) => {
         <div className="border-green"></div>
       </div>
       <div className="container-fluid text-center my-5 p-0 mx-0">
-        <div className="row row-cols-lg-4 row-cols-md-3 row-cols-2">
+        <div className="row row-cols-lg-5 row-cols-md-3 row-cols-2">
           {randomFiveProducts.map((mapProduct) => (
             <div className="mt-4" key={mapProduct.id}>
               <Link
@@ -82,7 +82,7 @@ const CatRelProd = ({ productId, productName }) => {
                     >
                       {mapProduct.heading}
                     </h2>
-                    <div className="d-flex justify-content-between align-items-center w-100">
+                    <div className="d-flex justify-content-center align-items-center w-100">
                       <div>
                         <h4
                           className="p-0 text-green fw-semibold m-0 text-align-center"
@@ -91,9 +91,7 @@ const CatRelProd = ({ productId, productName }) => {
                           {mapProduct.price}.00 Rs
                         </h4>
                       </div>
-                      <WhishIcon />
                     </div>
-                    <AddtoCart />
                   </div>
                 </div>
               </Link>

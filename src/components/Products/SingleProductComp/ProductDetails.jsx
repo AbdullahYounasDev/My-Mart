@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Product from "../Product";
 import PageNotFound from "../../Page Not Found/PageNotFound";
 import AddtoCart from "../../AddToCart/AddtoCart";
+import WhishIcon from "../../WhishList/WhishIcon";
 
 const ProductDetails = ({ productId, productName }) => {
   // if routes cant match then return null
@@ -74,7 +75,7 @@ const ProductDetails = ({ productId, productName }) => {
       </h3>
       <p className="fs-5 text-black fs-14 m-0">{SelectProd.smallDes}</p>
       <h1 className="fs-2 text-black fw-bold fs-20">{prodPrice}.00 Rs</h1>
-      <div className="d-flex flex-wrap gap-4">
+      <div className="d-flex flex-wrap align-items-center gap-4">
         <div className="d-flex justify-content-center align-items-center gap-2">
           <button
             className="fs-14 rounded-start-pill border py-2 px-3 text-white main-btn fs-5"
@@ -96,6 +97,7 @@ const ProductDetails = ({ productId, productName }) => {
             -
           </button>
         </div>
+        <WhishIcon mapProduct={SelectProd} />
         <AddtoCart />
       </div>
     </div>

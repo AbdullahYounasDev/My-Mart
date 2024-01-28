@@ -51,7 +51,7 @@ const FeatProducts = () => {
                     >
                       {mapProduct.heading}
                     </h2>
-                    <div className="d-flex justify-content-between align-items-center w-100">
+                    <div className="d-flex justify-content-center align-items-center w-100">
                       <div>
                         <h4
                           className="p-0 text-green fw-semibold m-0 text-align-center"
@@ -60,9 +60,7 @@ const FeatProducts = () => {
                           {mapProduct.price}.00 Rs
                         </h4>
                       </div>
-                      <WhishIcon mapProduct={mapProduct} />
                     </div>
-                    <AddtoCart />
                   </div>
                 </div>
               </Link>
