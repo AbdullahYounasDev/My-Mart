@@ -1,8 +1,10 @@
 import React from "react";
 import Product from "../Products/Product";
+import ProdForCustomer from "../ProductCopy/ProdForCustomer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
+import WhishIcon from "./WhishIcon";
 
 const WhishList = ({ setOpenWhish, OpenWhish }) => {
   const closeWhishList = () => {
@@ -11,8 +13,8 @@ const WhishList = ({ setOpenWhish, OpenWhish }) => {
     else document.body.style.overflowY = "scroll";
   };
   // Check If Product whishList is true
-  const WhishProduct = Product.filter((product) => {
-    return product.featured == true;
+  const WhishProduct = ProdForCustomer.filter((product) => {
+    return product.wishList == true;
   });
   return (
     <div className="position-absolute  sub-whish-list border border-2 start-0 top-0 px-3 py-4">
@@ -56,12 +58,7 @@ const WhishList = ({ setOpenWhish, OpenWhish }) => {
                     >
                       {mapProduct.heading}
                     </h4>
-                    <div
-                      className="heart-icon fs-2 me-2"
-                      style={{ fontFamily: "system-ui", color: "grey" }}
-                    >
-                      &#x2665;
-                    </div>
+                    <WhishIcon SelectProd={mapProduct} />
                   </div>
                   <div className="ms-3 d-flex justify-content-between align-items-center">
                     <h6 className="text-black">{mapProduct.price}.00 Rs</h6>

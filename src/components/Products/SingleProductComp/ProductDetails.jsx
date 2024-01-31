@@ -97,7 +97,7 @@ const ProductDetails = ({ productId, productName }) => {
             -
           </button>
         </div>
-        <WhishIcon mapProduct={SelectProd} />
+        <WhishIcon SelectProd={SelectProd} />
         <AddtoCart />
       </div>
     </div>
