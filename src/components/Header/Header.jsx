@@ -27,10 +27,17 @@ const Header = () => {
   const [OpenWhish, setOpenWhish] = useState(false);
   const HandleWish = (e) => {
     e.preventDefault();
+    e.stopPropagation();
     setOpenWhish(!OpenWhish);
-    if (OpenWhish == false) document.body.style.overflowY = "hidden";
+    if (OpenWhish == false) document.body.style.overflow = "hidden ";
     else document.body.style.overflowY = "scroll";
   };
+  if (OpenWhish == true) {
+    document.body.onclick = () => {
+      setOpenWhish(false);
+      document.body.style.overflowY = "scroll";
+    };
+  }
   return (
     <div className="bg-transparent position-relative d-flex justify-content-center align-items-center">
       <div className="w-100">

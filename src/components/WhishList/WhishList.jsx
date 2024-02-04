@@ -16,8 +16,16 @@ const WhishList = ({ setOpenWhish, OpenWhish }) => {
   const WhishProduct = ProdForCustomer.filter((product) => {
     return product.wishList == true;
   });
+
+  const stopProp = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+  };
   return (
-    <div className="position-absolute  sub-whish-list border border-2 start-0 top-0 px-3 py-4">
+    <div
+      className="position-absolute  sub-whish-list border border-2 start-0 top-0 px-3 py-4"
+      onClick={stopProp}
+    >
       <div className="d-flex justify-content-between align-items-center">
         <h3 className="fw-bold">
           Whish List<span className="text-green fs-3 fw-bold">.</span>

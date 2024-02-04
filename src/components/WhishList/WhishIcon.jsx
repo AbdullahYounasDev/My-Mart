@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 
 const WhishIcon = ({ SelectProd }) => {
-  // const [changeColor, setChangeColor] = useState(false);
+  const [iconColor, setIconColor] = useState("black");
 
   const WhishForProd = ProdForCustomer.find(
     (prod) => prod.id === SelectProd.id
@@ -12,13 +12,18 @@ const WhishIcon = ({ SelectProd }) => {
 
   const likedMe = (e) => {
     e.preventDefault();
+    e.stopPropagation();
 
     // Toggle the wishList property
     WhishForProd.wishList = !WhishForProd.wishList;
-  };
 
-  // Set the color based on the state value
-  // const iconColor = changeColor ? "#33cccc" : "black";
+    // Update the iconColor based on wishList
+    if (WhishForProd.wishList) {
+      setIconColor("#33cccc");
+    } else {
+      setIconColor("black");
+    }
+  };
 
   return (
     <div>
@@ -27,7 +32,12 @@ const WhishIcon = ({ SelectProd }) => {
         className="border-0 bg-transparent"
         onClick={(e) => likedMe(e)}
       >
-        <FontAwesomeIcon icon={faHeart} className="icons-30" />
+        <FontAwesomeIcon
+          id="heartIcon"
+          icon={faHeart}
+          style={{ color: iconColor }}
+          className="icons-30"
+        />
       </button>
     </div>
   );
