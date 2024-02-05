@@ -11,14 +11,17 @@ import Products from "./components/Products/Products";
 import Categories from "./components/Categories/Categories";
 import SingleCategorie from "./components/Categories/SingleCategorie";
 import SingleProduct from "./components/Products/SingleProduct";
+import ScrollToTop from "./components/ScrollTop/ScrollTop";
 // import PageNotFound from "./components/Page Not Found/PageNotFound";
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Header />
       <Routes>
         <Route exact path="/My-Mart" element={<Home />} />
+
         <Route exact path="/My-Mart/Product" element={<Products />} />
         <Route exact path="/My-Mart/Categorie" element={<Categories />} />
         <Route

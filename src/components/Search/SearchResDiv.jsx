@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import Product from "../Products/Product";
 
@@ -25,6 +24,7 @@ const SearchResDiv = ({ setSearch, setSearchMe }) => {
         >
           {searchResults.map((mapProduct) => (
             <Link
+              key={mapProduct.id}
               to={`/My-Mart/Product/${mapProduct.heading}/${mapProduct.id}`}
               style={{ textDecoration: "none" }}
             >

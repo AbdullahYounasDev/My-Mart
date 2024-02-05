@@ -16,6 +16,7 @@ const Header = () => {
   const [SearchMe, setSearchMe] = useState(false);
   const GetSearchBar = (e) => {
     e.preventDefault();
+    e.stopPropagation();
     setSearchMe(!SearchMe);
   };
   const [SearchContent, setSearchContent] = useState("");
@@ -86,7 +87,10 @@ const Header = () => {
                 <div className="d-flex d-lg-none justify-content-center align-items-center gap-3 mb-4">
                   <div>
                     <button
-                      className="border-0 bg-transparent"
+                      type="button"
+                      data-bs-dismiss="offcanvas"
+                      aria-label="Close"
+                      className="border-0 bg-transparent "
                       onClick={GetSearchBar}
                     >
                       <FontAwesomeIcon icon={faSearch} className="icons" />
@@ -94,6 +98,9 @@ const Header = () => {
                   </div>
                   <div>
                     <button
+                      type="button"
+                      data-bs-dismiss="offcanvas"
+                      aria-label="Close"
                       to="#"
                       className="border-0 bg-transparent"
                       onClick={HandleWish}
@@ -102,7 +109,12 @@ const Header = () => {
                     </button>
                   </div>
                   <div>
-                    <button className="border-0 bg-transparent">
+                    <button
+                      className="border-0 bg-transparent"
+                      type="button"
+                      data-bs-dismiss="offcanvas"
+                      aria-label="Close"
+                    >
                       <FontAwesomeIcon
                         icon={faShoppingCart}
                         className="icons"
@@ -110,7 +122,12 @@ const Header = () => {
                     </button>
                   </div>
                   <div>
-                    <button className="border-0 bg-transparent">
+                    <button
+                      className="border-0 bg-transparent"
+                      type="button"
+                      data-bs-dismiss="offcanvas"
+                      aria-label="Close"
+                    >
                       <FontAwesomeIcon icon={faUser} className="icons" />
                     </button>
                   </div>
@@ -190,7 +207,11 @@ const Header = () => {
         </nav>
       </div>
       {SearchMe && (
-        <SearchBar getSearch={getSearch} setSearchMe={setSearchMe} />
+        <SearchBar
+          getSearch={getSearch}
+          setSearchMe={setSearchMe}
+          SearchMe={SearchMe}
+        />
       )}
       {SearchMe && (
         <SearchResDiv setSearch={SearchContent} setSearchMe={setSearchMe} />
