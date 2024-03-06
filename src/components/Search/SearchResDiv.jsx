@@ -1,13 +1,15 @@
 import { Link } from "react-router-dom";
-import Product from "../Products/Product";
+import { useContext } from "react";
+import { AppContext } from "../Context/ProductContext";
 
 const SearchResDiv = ({ setSearch, setSearchMe }) => {
+  const AddProd = useContext(AppContext);
   const searchLowerCase = setSearch.toLowerCase(); // Convert search query to lowercase
   // Check if the search query is empty
   if (searchLowerCase.trim() === "") {
     return null; // Don't render anything if the search query is empty
   }
-  const searchResults = Product.filter((prod) => {
+  const searchResults = AddProd.filter((prod) => {
     const productHeadingLowerCase = prod.heading.toLowerCase(); // Convert product heading to lowercase
     return productHeadingLowerCase.includes(searchLowerCase);
   });

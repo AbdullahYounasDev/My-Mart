@@ -12,7 +12,7 @@ import Categories from "./components/Categories/Categories";
 import SingleCategorie from "./components/Categories/SingleCategorie";
 import SingleProduct from "./components/Products/SingleProduct";
 import ScrollToTop from "./components/ScrollTop/ScrollTop";
-// import PageNotFound from "./components/Page Not Found/PageNotFound";
+import PageNotFound from "./components/Page Not Found/PageNotFound";
 
 function App() {
   return (
@@ -36,7 +36,7 @@ function App() {
         />
         <Route exact path="/My-Mart/About" element={<About />} />
         <Route exact path="/My-Mart/Contact" element={<Contact />} />
-        {/* <Route path="*" element={<PageNotFound />} /> */}
+        <Route path="*" element={<PageNotFound />} />
       </Routes>
       <Footer />
     </Router>

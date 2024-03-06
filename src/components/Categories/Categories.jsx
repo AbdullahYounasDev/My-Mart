@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import Categorie from "./Categorie";
+import { CatContext } from "../Context/CategorieContext";
 const Categories = () => {
-  const [AddCate, setAddCate] = useState(Categorie);
+  const AddCate = useContext(CatContext);
   return (
     <>
       <div className="categorie-sec container-fluid text-center py-5">

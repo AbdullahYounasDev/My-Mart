@@ -1,18 +1,19 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import Product from "./Product";
 import AddtoCart from "../AddToCart/AddtoCart";
 import WhishIcon from "../WhishList/WhishIcon";
+import { AppContext } from "../Context/ProductContext";
 
 const FeatProducts = () => {
-  const [AddProd, setAddProd] = useState(Product);
+  const AddProd = useContext(AppContext);
   const filterProduct = AddProd.filter((prod) => prod.featured === true);
   return (
     <>
       <div className="container text-center my-5">
         <h1 className="fw-semibold text-black">Our Featured Products</h1>
         <p className="mt-3">Buy Our Products And Get Exclusive Discounts</p>
-        <div className="m-auto my-5" style={{ maxWidth: "65px" }}>
+        <div className="m-auto my-4" style={{ maxWidth: "65px" }}>
           <div className="border-green"></div>
         </div>
         <div className="row row-cols-lg-5 row-cols-md-3 row-cols-2">

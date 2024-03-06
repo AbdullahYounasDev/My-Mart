@@ -1,17 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Link, useParams } from "react-router-dom";
-import Categorie from "./Categorie";
-import Product from "../Products/Product";
-import AddtoCart from "../AddToCart/AddtoCart";
-import WhishIcon from "../WhishList/WhishIcon";
+import { CatContext } from "../Context/CategorieContext";
+import { AppContext } from "../Context/ProductContext";
 
 const SingleCategorie = () => {
   const { categorieName } = useParams();
+  const AddCat = useContext(CatContext);
+  const AddProd = useContext(AppContext);
   //   Use to check category name in Url and in actual category
-  const selectedCategory = Categorie.find(
+  const selectedCategory = AddCat.find(
     (category) => category.heading == categorieName
   );
-  const [AddProd, setAddCatProd] = useState(Product);
 
   return (
     <>

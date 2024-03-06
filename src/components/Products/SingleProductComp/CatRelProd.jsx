@@ -1,21 +1,19 @@
-import React, { useState } from "react";
-import Product from "../Product";
-import Categorie from "../../Categories/Categorie";
+import React, { useState, useContext } from "react";
+import { AppContext } from "../../Context/ProductContext";
+import { CatContext } from "../../Context/CategorieContext";
 import { Link } from "react-router-dom";
-import AddtoCart from "../../AddToCart/AddtoCart";
-import WhishIcon from "../../WhishList/WhishIcon";
 
 const CatRelProd = ({ productId, productName }) => {
   // if routes cant match then return null
-  const SelectProd = Product.find(
+  const AddProd = useContext(AppContext);
+  const AddCat = useContext(CatContext);
+  const SelectProd = AddProd.find(
     (product) => product.id == productId && product.heading == productName
   );
 
   if (!SelectProd) {
     return null;
   }
-  const [AddProd, setAddProd] = useState(Product);
-  const [AddCat, setAddCat] = useState(Categorie);
   // to get product come from prop
   const ProdName = AddProd.find((prod) => prod.heading === productName);
   // to get categorie of that prod
@@ -38,17 +36,17 @@ const CatRelProd = ({ productId, productName }) => {
     ];
   }
   // Take the first 5 products
-  const randomFiveProducts = shuffledProducts.slice(0, 4);
+  const randomFiveProducts = shuffledProducts.slice(0, 5);
   return (
     <div className="container-fluid text-center my-5 py-5 px-0 mx-0">
       <h1 className="fw-semibold text-black">Related Products</h1>
-      <div className="m-auto my-5" style={{ maxWidth: "65px" }}>
+      <div className="m-auto my-4" style={{ maxWidth: "65px" }}>
         <div className="border-green"></div>
       </div>
       <div className="container-fluid text-center my-5 p-0 mx-0">
         <div className="row row-cols-lg-5 row-cols-md-3 row-cols-2">
           {randomFiveProducts.map((mapProduct) => (
-            <div className="mt-4" key={mapProduct.id}>
+            <div className="mt-3" key={mapProduct.id}>
               <Link
                 to={`/My-Mart/Product/${mapProduct.heading}/${mapProduct.id}`}
                 className="link text-white fw-semibold m-0 p-0 text-center"

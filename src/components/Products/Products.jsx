@@ -1,10 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
-import Product from "./Product";
-import AddtoCart from "../AddToCart/AddtoCart";
-import WhishIcon from "../WhishList/WhishIcon";
+import { AppContext } from "../Context/ProductContext";
 const Products = () => {
-  const [AddProd, setAddProd] = useState(Product);
+  const AddProd = useContext(AppContext);
 
   return (
     <>

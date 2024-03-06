@@ -1,13 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
-import Product from "../Product";
-import PageNotFound from "../../Page Not Found/PageNotFound";
 import AddtoCart from "../../AddToCart/AddtoCart";
 import WhishIcon from "../../WhishList/WhishIcon";
+import { AppContext } from "../../Context/ProductContext";
 
 const ProductDetails = ({ productId, productName }) => {
   // if routes cant match then return null
-  const SelectProd = Product.find(
+  const AddProd = useContext(AppContext);
+  const SelectProd = AddProd.find(
     (product) => product.id == productId && product.heading == productName
   );
 

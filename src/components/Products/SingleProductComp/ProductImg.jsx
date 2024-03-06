@@ -1,10 +1,10 @@
-import React from "react";
-import Product from "../Product";
-import PageNotFound from "../../Page Not Found/PageNotFound";
+import React, { useContext } from "react";
+import { AppContext } from "../../Context/ProductContext";
 
 const ProductImg = ({ productId, productName }) => {
   // if routes cant match then return null
-  const SelectProd = Product.find(
+  const AddProd = useContext(AppContext);
+  const SelectProd = AddProd.find(
     (product) => product.id == productId && product.heading == productName
   );
   if (!SelectProd) {

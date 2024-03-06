@@ -1,19 +1,19 @@
-import React from "react";
-import Product from "../Products/Product";
-import ProdForCustomer from "../ProductCopy/ProdForCustomer";
+import React, { useContext } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import WhishIcon from "./WhishIcon";
+import { AppContext } from "../Context/ProductContext";
 
 const WhishList = ({ setOpenWhish, OpenWhish }) => {
+  const AddProd = useContext(AppContext);
   const closeWhishList = () => {
     setOpenWhish(false);
     if (OpenWhish == false) document.body.style.overflowY = "hidden";
     else document.body.style.overflowY = "scroll";
   };
   // Check If Product whishList is true
-  const WhishProduct = ProdForCustomer.filter((product) => {
+  const WhishProduct = AddProd.filter((product) => {
     return product.wishList == true;
   });
 

@@ -17,7 +17,12 @@ const About = () => {
         <CustomerSat />
         <div className="row mt-5">
           <div className="col-12 col-lg-5 col-md-6 col-sm-12 d-flex justify-content-center align-items-center">
-            <img src={me} alt="" className="w-100 rounded shadow-lg" />
+            <img
+              src={me}
+              alt=""
+              className="w-100 rounded shadow-lg"
+              style={{ objectFit: "cover", height: "100%" }}
+            />
           </div>
           <div className="col-12 col-lg-7 col-md-6 col-sm-12 py-3 d-flex flex-column justify-content-center ps-lg-5 ps-md-5 ps-0">
             <h2 className="fw-semibold text-black">About us</h2>
@@ -31,7 +36,12 @@ const About = () => {
         </div>
         <div className="row mt-5 flex-row-reverse">
           <div className="col-12 col-lg-5 col-md-6 col-sm-12 d-flex justify-content-center align-items-center">
-            <img src={mart} alt="" className="w-100 rounded shadow-lg" />
+            <img
+              src={mart}
+              alt=""
+              className="w-100 rounded shadow-lg "
+              style={{ objectFit: "cover", height: "100%" }}
+            />
           </div>
           <div className="col-12 col-lg-7 col-md-6 col-sm-12 py-3 d-flex flex-column justify-content-center">
             <h2 className="fw-semibold text-black">Our Story</h2>
@@ -46,7 +56,12 @@ const About = () => {
         </div>
         <div className="row mt-5">
           <div className="col-12 col-lg-5 col-md-6 col-sm-12 d-flex justify-content-center align-items-center">
-            <img src={team} alt="" className="w-100 rounded shadow-lg" />
+            <img
+              src={team}
+              alt=""
+              className="w-100 rounded shadow-lg"
+              style={{ objectFit: "cover", height: "100%" }}
+            />
           </div>
           <div className="col-12 col-lg-7 col-md-6 col-sm-12 py-3 d-flex flex-column justify-content-center ps-lg-5 ps-md-5 ps-0">
             <h2 className="fw-semibold text-black">Our Mission</h2>

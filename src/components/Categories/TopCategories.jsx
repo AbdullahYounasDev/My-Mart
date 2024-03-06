@@ -1,21 +1,21 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
-import Categorie from "./Categorie";
+import { CatContext } from "../Context/CategorieContext";
 const TopCategories = () => {
-  const [AddCate, setAddCate] = useState(Categorie);
+  const AddCate = useContext(CatContext);
   return (
     <>
       <div className="container text-center my-5">
         <h1 className="fw-semibold text-black">Shop By Categories</h1>
         <p className="mt-3">Vist Our Shop To See Amazing Products</p>
-        <div className="m-auto my-5" style={{ maxWidth: "65px" }}>
+        <div className="m-auto my-4" style={{ maxWidth: "65px" }}>
           <div className="border-green"></div>
         </div>
         <div className="row">
           {AddCate.filter((categorie) => categorie.top === true).map(
             (categorie) => (
               <div
-                className="col-lg-3 col-md-6 col-sm-6 col-6 mt-2"
+                className="col-lg-3 col-md-6 col-sm-6 col-6 mt-4"
                 key={categorie.id}
               >
                 <Link
