@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { memo, useContext } from "react";
 import { Link } from "react-router-dom";
 import Product from "./Product";
 import AddtoCart from "../AddToCart/AddtoCart";
@@ -73,4 +73,4 @@ const FeatProducts = () => {
   );
 };
 
-export default FeatProducts;
+export default memo(FeatProducts);

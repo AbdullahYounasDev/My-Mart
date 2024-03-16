@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import FastDel from "../Images/delivery-truck.gif";
 import Rate from "../Images/rate.gif";
 import HappyClient from "../Images/happy-client.gif";
@@ -55,4 +55,4 @@ const CustomerSat = () => {
   );
 };
 
-export default CustomerSat;
+export default memo(CustomerSat);

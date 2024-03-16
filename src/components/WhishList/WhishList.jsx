@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { memo, useContext } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
@@ -81,4 +81,4 @@ const WhishList = ({ setOpenWhish, OpenWhish }) => {
   );
 };
 
-export default WhishList;
+export default memo(WhishList);

@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, memo } from "react";
 import { Link } from "react-router-dom";
 import Categorie from "./Categorie";
 import { CatContext } from "../Context/CategorieContext";
@@ -50,4 +50,4 @@ const Categories = () => {
   );
 };
 
-export default Categories;
+export default memo(Categories);

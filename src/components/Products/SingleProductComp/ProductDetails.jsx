@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, memo } from "react";
 import { Link } from "react-router-dom";
 import AddtoCart from "../../AddToCart/AddtoCart";
 import WhishIcon from "../../WhishList/WhishIcon";
@@ -104,4 +104,4 @@ const ProductDetails = ({ productId, productName }) => {
   );
 };
 
-export default ProductDetails;
+export default memo(ProductDetails);

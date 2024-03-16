@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect, useContext, memo } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { AppContext } from "../Context/ProductContext";
@@ -42,4 +42,4 @@ const WhishIcon = ({ SelectProd }) => {
   );
 };
 
-export default WhishIcon;
+export default memo(WhishIcon);

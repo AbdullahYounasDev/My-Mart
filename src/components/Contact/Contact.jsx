@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { memo, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMobile, faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
 const initialVal = {
@@ -105,4 +105,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default memo(Contact);

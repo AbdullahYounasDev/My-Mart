@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, memo } from "react";
 import { AppContext } from "../../Context/ProductContext";
 import { CatContext } from "../../Context/CategorieContext";
 import { Link } from "react-router-dom";
@@ -101,4 +101,4 @@ const CatRelProd = ({ productId, productName }) => {
   );
 };
 
-export default CatRelProd;
+export default memo(CatRelProd);

@@ -1,5 +1,5 @@
 // ScrollToTop.jsx
-import { useEffect } from "react";
+import { memo, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 function ScrollToTop() {
@@ -12,4 +12,4 @@ function ScrollToTop() {
   return null;
 }
 
-export default ScrollToTop;
+export default memo(ScrollToTop);

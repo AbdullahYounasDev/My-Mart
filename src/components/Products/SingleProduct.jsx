@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import ProductImg from "./SingleProductComp/ProductImg";
 import ProductDetails from "./SingleProductComp/ProductDetails";
 import { useParams } from "react-router-dom";
@@ -23,4 +23,4 @@ const SingleProduct = () => {
   );
 };
 
-export default SingleProduct;
+export default memo(SingleProduct);

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import me from "../Images/me.jpg";
 import team from "../Images/team.jpg";
 import mart from "../Images/mart.jpg";
@@ -80,4 +80,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default memo(About);

@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { memo, useContext } from "react";
 import { AppContext } from "../../Context/ProductContext";
 
 const ProductImg = ({ productId, productName }) => {
@@ -22,4 +22,4 @@ const ProductImg = ({ productId, productName }) => {
   );
 };
 
-export default ProductImg;
+export default memo(ProductImg);

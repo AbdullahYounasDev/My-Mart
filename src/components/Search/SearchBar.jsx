@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, memo } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 
@@ -41,4 +41,4 @@ const SearchBar = ({ getSearch, setSearchMe, SearchMe }) => {
   );
 };
 
-export default SearchBar;
+export default memo(SearchBar);

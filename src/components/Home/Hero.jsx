@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { Link } from "react-router-dom";
 const Hero = () => {
   return (
@@ -40,4 +40,4 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+export default memo(Hero);

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { memo, useState } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -199,4 +199,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default memo(Footer);

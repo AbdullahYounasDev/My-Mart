@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { memo, useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { CatContext } from "../Context/CategorieContext";
 const TopCategories = () => {
@@ -51,4 +51,4 @@ const TopCategories = () => {
   );
 };
 
-export default TopCategories;
+export default memo(TopCategories);

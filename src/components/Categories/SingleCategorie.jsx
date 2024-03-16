@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, memo } from "react";
 import { Link, useParams } from "react-router-dom";
 import { CatContext } from "../Context/CategorieContext";
 import { AppContext } from "../Context/ProductContext";
@@ -97,4 +97,4 @@ const SingleCategorie = () => {
   );
 };
 
-export default SingleCategorie;
+export default memo(SingleCategorie);

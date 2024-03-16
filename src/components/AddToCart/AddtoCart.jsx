@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import "../../index.css";
 
 const AddtoCart = () => {
@@ -11,4 +11,4 @@ const AddtoCart = () => {
   );
 };
 
-export default AddtoCart;
+export default memo(AddtoCart);
