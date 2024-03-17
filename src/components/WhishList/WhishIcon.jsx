@@ -1,45 +1,29 @@
-import React, { useState, useEffect, useContext, memo } from "react";
+import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
-import { AppContext } from "../Context/ProductContext";
+import { toggleWish } from "../../Features/Features";
+import { useDispatch, useSelector } from "react-redux";
 
 const WhishIcon = ({ SelectProd }) => {
-  const [iconColor, setIconColor] = useState("black");
-  const AddProd = useContext(AppContext);
-
+  const dispatch = useDispatch();
+  const AddProd = useSelector((state) => state.Product);
   const WhishForProd = AddProd.find((prod) => prod.id === SelectProd.id);
-
-  const likedMe = (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-
-    // Toggle the wishList property
-    WhishForProd.wishList = !WhishForProd.wishList;
-
-    // Update the iconColor based on wishList
-    if (WhishForProd.wishList == true) {
-      setIconColor("#33cccc");
-    } else {
-      setIconColor("black");
-    }
-  };
 
   return (
     <div>
       <button
         to="#"
         className="border-0 bg-transparent"
-        onClick={(e) => likedMe(e)}
+        onClick={() => dispatch(toggleWish(WhishForProd.id))}
       >
         <FontAwesomeIcon
           id="heartIcon"
           icon={faHeart}
-          style={{ color: iconColor }}
+          style={{ color: WhishForProd.wishList ? "#33cccc" : "black" }}
           className="icons-30"
         />
       </button>
     </div>
   );
 };
-
-export default memo(WhishIcon);
+export default WhishIcon;

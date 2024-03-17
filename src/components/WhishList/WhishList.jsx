@@ -3,10 +3,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import WhishIcon from "./WhishIcon";
-import { AppContext } from "../Context/ProductContext";
+import { useSelector } from "react-redux";
 
 const WhishList = ({ setOpenWhish, OpenWhish }) => {
-  const AddProd = useContext(AppContext);
+  // Product data in AddProd
+  const AddProd = useSelector((state) => state.Product);
+  //For closing whishlist
   const closeWhishList = () => {
     setOpenWhish(false);
     if (OpenWhish == false) document.body.style.overflowY = "hidden";

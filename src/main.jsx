@@ -6,13 +6,15 @@ import App from "./App.jsx";
 import "./index.css";
 import { AppProvider } from "./components/Context/ProductContext.jsx";
 import { CatProvider } from "./components/Context/CategorieContext.jsx";
+import { Provider } from "react-redux";
+import { store } from "./store/store.js";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode basename="/My-Mart">
+  <Provider store={store}>
     <AppProvider>
       <CatProvider>
         <App />
       </CatProvider>
     </AppProvider>
-  </React.StrictMode>
+  </Provider>
 );
