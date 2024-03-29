@@ -1,12 +1,14 @@
-import React, { useState, useContext, memo } from "react";
+import React, { useState, memo } from "react";
 import { Link } from "react-router-dom";
 import AddtoCart from "../../AddToCart/AddtoCart";
 import WhishIcon from "../../WhishList/WhishIcon";
-import { AppContext } from "../../Context/ProductContext";
+import { useSelector, useDispatch } from "react-redux";
+import { toggleCartFalse } from "../../../Features/Features";
 
 const ProductDetails = ({ productId, productName }) => {
+  const AddProd = useSelector((state)=> state.Product)
+  const dispatch = useDispatch()
   // if routes cant match then return null
-  const AddProd = useContext(AppContext);
   const SelectProd = AddProd.find(
     (product) => product.id == productId && product.heading == productName
   );
@@ -19,6 +21,7 @@ const ProductDetails = ({ productId, productName }) => {
   const [prodPrice, setProdPrice] = useState(SelectProd.price);
   // For Increment Amount and Quntity
   const incAmount = () => {
+    dispatch(toggleCartFalse(SelectProd.id))
     let newAmount = amount;
     let newPrice = prodPrice;
     setAmount(newAmount + 1);
@@ -30,6 +33,7 @@ const ProductDetails = ({ productId, productName }) => {
   };
   // For Decrement Amount and Quntity
   const DecAmount = () => {
+    dispatch(toggleCartFalse(SelectProd.id))
     let newAmount = amount;
     let newPrice = prodPrice;
     setAmount(newAmount - 1);
@@ -39,6 +43,11 @@ const ProductDetails = ({ productId, productName }) => {
       setProdPrice(SelectProd.price);
     }
   };
+
+
+  const handleChange = () => {
+    
+  }
   return (
     <div
       className="d-flex flex-column gap-4 justify-content-center"
@@ -89,6 +98,7 @@ const ProductDetails = ({ productId, productName }) => {
             value={amount}
             style={{ width: "70px", outline: "none", borderRadius: "10px" }}
             readOnly
+            onChange={handleChange}
           />
           <button
             className="fs-14 rounded-end-pill border py-2 px-3 text-white main-btn fs-5"
@@ -98,7 +108,7 @@ const ProductDetails = ({ productId, productName }) => {
           </button>
         </div>
         <WhishIcon SelectProd={SelectProd} />
-        <AddtoCart />
+        <AddtoCart  SelectProd={SelectProd} amount={amount} setAmount={setAmount}/>
       </div>
     </div>
   );

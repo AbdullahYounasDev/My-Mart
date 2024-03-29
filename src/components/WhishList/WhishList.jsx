@@ -61,9 +61,9 @@ const WhishList = ({ setOpenWhish, OpenWhish }) => {
                   />
                 </div>
                 <div className="w-100">
-                  <div className="ms-3 d-flex justify-content-between align-items-center">
+                  <div className="ms-3 d-flex justify-content-between align-items-center mb-2">
                     <h4
-                      className="text-black fw-semibold m-0"
+                      className="text-black fw-semibold m-0 fs-5"
                       style={{ textDecoration: "none" }}
                     >
                       {mapProduct.heading}

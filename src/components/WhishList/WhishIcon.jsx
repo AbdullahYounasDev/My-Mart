@@ -14,7 +14,10 @@ const WhishIcon = ({ SelectProd }) => {
       <button
         to="#"
         className="border-0 bg-transparent"
-        onClick={() => dispatch(toggleWish(WhishForProd.id))}
+        onClick={(e) => {
+          dispatch(toggleWish(WhishForProd.id));
+          e.preventDefault();
+        }}
       >
         <FontAwesomeIcon
           id="heartIcon"

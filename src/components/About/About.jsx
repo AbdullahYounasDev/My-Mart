@@ -1,6 +1,5 @@
 import React, { memo } from "react";
 import me from "../Images/me.jpg";
-import team from "../Images/team.jpg";
 import mart from "../Images/mart.jpg";
 import CustomerSat from "../Home/CustomerSat";
 const About = () => {
@@ -57,7 +56,7 @@ const About = () => {
         <div className="row mt-5">
           <div className="col-12 col-lg-5 col-md-6 col-sm-12 d-flex justify-content-center align-items-center">
             <img
-              src={team}
+              src={me}
               alt=""
               className="w-100 rounded shadow-lg"
               style={{ objectFit: "cover", height: "100%" }}

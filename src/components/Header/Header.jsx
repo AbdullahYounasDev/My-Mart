@@ -109,17 +109,15 @@ const Header = () => {
                     </button>
                   </div>
                   <div>
-                    <button
+                  <Link
                       className="border-0 bg-transparent"
-                      type="button"
-                      data-bs-dismiss="offcanvas"
-                      aria-label="Close"
+                      to="/My-Mart/Cart"
                     >
                       <FontAwesomeIcon
                         icon={faShoppingCart}
                         className="icons"
                       />
-                    </button>
+                    </Link>
                   </div>
                   <div>
                     <button
@@ -184,11 +182,17 @@ const Header = () => {
                 </button>
               </div>
               <div>
-                <button to="#" className="border-0 bg-transparent">
-                  <FontAwesomeIcon icon={faShoppingCart} className="icons" />
-                </button>
+              <Link
+                      className="border-0 bg-transparent"
+                      to="/My-Mart/Cart"
+                    >
+                      <FontAwesomeIcon
+                        icon={faShoppingCart}
+                        className="icons"
+                      />
+                    </Link>
               </div>
-              <div>
+              <div className="position-relative">
                 <button
                   to="#"
                   className="border-0 bg-transparent"

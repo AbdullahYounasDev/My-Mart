@@ -26,6 +26,8 @@ const Product = [
     featured: false,
     categorie: "Fruits",
     wishList: false,
+    carted: false,
+    amount:0,
     smallDes:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, harum dolorum. Aspernatur, assumenda quisquam quaerat porro quia magni eum rerum fuga molestiae impedit fugit dolor similique omnis ratione sequi. Repellat.",
   },
@@ -37,6 +39,8 @@ const Product = [
     featured: true,
     categorie: "Meat",
     wishList: false,
+    carted: false,
+    amount:0,
     smallDes:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, harum dolorum. Aspernatur, assumenda quisquam quaerat porro quia magni eum rerum fuga molestiae impedit fugit dolor similique omnis ratione sequi. Repellat.",
   },
@@ -48,6 +52,8 @@ const Product = [
     featured: true,
     categorie: "Fruits",
     wishList: false,
+    carted: false,
+    amount:0,
     smallDes:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, harum dolorum. Aspernatur, assumenda quisquam quaerat porro quia magni eum rerum fuga molestiae impedit fugit dolor similique omnis ratione sequi. Repellat.",
   },
@@ -60,6 +66,8 @@ const Product = [
     featured: false,
     categorie: "Meat",
     wishList: false,
+    carted: false,
+    amount:0,
     smallDes:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, harum dolorum. Aspernatur, assumenda quisquam quaerat porro quia magni eum rerum fuga molestiae impedit fugit dolor similique omnis ratione sequi. Repellat.",
   },
@@ -71,6 +79,8 @@ const Product = [
     featured: true,
     categorie: "Vegetables",
     wishList: false,
+    carted: false,
+    amount:0,
     smallDes:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, harum dolorum. Aspernatur, assumenda quisquam quaerat porro quia magni eum rerum fuga molestiae impedit fugit dolor similique omnis ratione sequi. Repellat.",
   },
@@ -82,6 +92,8 @@ const Product = [
     featured: true,
     categorie: "Meat",
     wishList: false,
+    carted: false,
+    amount:0,
     smallDes:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, harum dolorum. Aspernatur, assumenda quisquam quaerat porro quia magni eum rerum fuga molestiae impedit fugit dolor similique omnis ratione sequi. Repellat.",
   },
@@ -93,6 +105,8 @@ const Product = [
     featured: true,
     categorie: "Milk",
     wishList: false,
+    carted: false,
+    amount:0,
     smallDes:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, harum dolorum. Aspernatur, assumenda quisquam quaerat porro quia magni eum rerum fuga molestiae impedit fugit dolor similique omnis ratione sequi. Repellat.",
   },
@@ -104,6 +118,8 @@ const Product = [
     featured: false,
     categorie: "Meat",
     wishList: false,
+    carted: false,
+    amount:0,
     smallDes:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, harum dolorum. Aspernatur, assumenda quisquam quaerat porro quia magni eum rerum fuga molestiae impedit fugit dolor similique omnis ratione sequi. Repellat.",
   },
@@ -115,6 +131,8 @@ const Product = [
     featured: false,
     categorie: "Meat",
     wishList: false,
+    carted: false,
+    amount:0,
     smallDes:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, harum dolorum. Aspernatur, assumenda quisquam quaerat porro quia magni eum rerum fuga molestiae impedit fugit dolor similique omnis ratione sequi. Repellat.",
   },
@@ -126,6 +144,8 @@ const Product = [
     featured: true,
     categorie: "Milk",
     wishList: false,
+    carted: false,
+    amount:0,
     smallDes:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, harum dolorum. Aspernatur, assumenda quisquam quaerat porro quia magni eum rerum fuga molestiae impedit fugit dolor similique omnis ratione sequi. Repellat.",
   },
@@ -137,6 +157,8 @@ const Product = [
     featured: false,
     categorie: "Vegetables",
     wishList: false,
+    carted: false,
+    amount:0,
     smallDes:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, harum dolorum. Aspernatur, assumenda quisquam quaerat porro quia magni eum rerum fuga molestiae impedit fugit dolor similique omnis ratione sequi. Repellat.",
   },
@@ -148,6 +170,8 @@ const Product = [
     featured: false,
     categorie: "Fruits",
     wishList: false,
+    carted: false,
+    amount:0,
     smallDes:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, harum dolorum. Aspernatur, assumenda quisquam quaerat porro quia magni eum rerum fuga molestiae impedit fugit dolor similique omnis ratione sequi. Repellat.",
   },
@@ -159,6 +183,8 @@ const Product = [
     featured: true,
     categorie: "Meat",
     wishList: false,
+    carted: false,
+    amount:0,
     smallDes:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, harum dolorum. Aspernatur, assumenda quisquam quaerat porro quia magni eum rerum fuga molestiae impedit fugit dolor similique omnis ratione sequi. Repellat.",
   },
@@ -170,6 +196,8 @@ const Product = [
     featured: true,
     categorie: "Vegetables",
     wishList: false,
+    carted: false,
+    amount:0,
     smallDes:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, harum dolorum. Aspernatur, assumenda quisquam quaerat porro quia magni eum rerum fuga molestiae impedit fugit dolor similique omnis ratione sequi. Repellat.",
   },
@@ -181,6 +209,8 @@ const Product = [
     featured: false,
     categorie: "Meat",
     wishList: false,
+    carted: false,
+    amount:0,
     smallDes:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, harum dolorum. Aspernatur, assumenda quisquam quaerat porro quia magni eum rerum fuga molestiae impedit fugit dolor similique omnis ratione sequi. Repellat.",
   },
@@ -192,6 +222,8 @@ const Product = [
     featured: true,
     categorie: "Fruits",
     wishList: false,
+    carted: false,
+    amount:0,
     smallDes:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, harum dolorum. Aspernatur, assumenda quisquam quaerat porro quia magni eum rerum fuga molestiae impedit fugit dolor similique omnis ratione sequi. Repellat.",
   },
@@ -203,6 +235,8 @@ const Product = [
     featured: true,
     categorie: "Meat",
     wishList: false,
+    carted: false,
+    amount:0,
     smallDes:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, harum dolorum. Aspernatur, assumenda quisquam quaerat porro quia magni eum rerum fuga molestiae impedit fugit dolor similique omnis ratione sequi. Repellat.",
   },
@@ -214,6 +248,8 @@ const Product = [
     featured: false,
     categorie: "Vegetables",
     wishList: false,
+    carted: false,
+    amount:0,
     smallDes:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, harum dolorum. Aspernatur, assumenda quisquam quaerat porro quia magni eum rerum fuga molestiae impedit fugit dolor similique omnis ratione sequi. Repellat.",
   },

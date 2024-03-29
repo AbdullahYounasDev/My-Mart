@@ -13,6 +13,7 @@ import SingleCategorie from "./components/Categories/SingleCategorie";
 import SingleProduct from "./components/Products/SingleProduct";
 import ScrollToTop from "./components/ScrollTop/ScrollTop";
 import PageNotFound from "./components/Page Not Found/PageNotFound";
+import Cart from "./components/AddToCart/Cart";
 
 function App() {
   return (
@@ -36,6 +37,11 @@ function App() {
         />
         <Route exact path="/My-Mart/About" element={<About />} />
         <Route exact path="/My-Mart/Contact" element={<Contact />} />
+        <Route
+          exact
+          path="/My-Mart/Cart/"
+          element={<Cart/>}
+        />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
       <Footer />

@@ -152,6 +152,9 @@ svg {
   max-height: 100vh;
   overflow-y: scroll;
 }
+.cartItem{
+  border: 0;
+}
 @keyframes animWhishList {
   0% {
     transform: translateX(-200px);
@@ -160,3 +163,4 @@ svg {
     transform: translateX(0px);
   }
 }
+

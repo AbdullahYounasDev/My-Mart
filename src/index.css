@@ -5,6 +5,9 @@
   .sub-whish-list {
     width: 45% !important;
   }
+  .cartItem{
+    border: 0.5px solid gray;
+  }
 }
 @media screen and (max-width: 768px) {
   .fs-70 {
