@@ -1,7 +1,9 @@
+/** @format */
+
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
-svg {
-  vertical-align: middle;
-  stroke: white;
+#chatbase-bubble-button,
+#chatbase-bubble-button * {
+  fill: white;
 }
 * {
   font-family: Poppins, sans-serif;
@@ -12,7 +14,7 @@ svg {
   outline: none !important;
 }
 .text-green {
-  color: #33cccc;
+  color: #33cccc !important;
 }
 .border-green {
   border: 3px solid #33cccc;
@@ -152,7 +154,7 @@ svg {
   max-height: 100vh;
   overflow-y: scroll;
 }
-.cartItem{
+.cartItem {
   border: 0;
 }
 @keyframes animWhishList {
@@ -163,4 +165,3 @@ svg {
     transform: translateX(0px);
   }
 }
-

@@ -1,3 +1,5 @@
+/** @format */
+
 import React, { useState, memo } from "react";
 import { Link } from "react-router-dom";
 import AddtoCart from "../../AddToCart/AddtoCart";
@@ -6,11 +8,11 @@ import { useSelector, useDispatch } from "react-redux";
 import { toggleCartFalse } from "../../../Features/Features";
 
 const ProductDetails = ({ productId, productName }) => {
-  const AddProd = useSelector((state)=> state.Product)
-  const dispatch = useDispatch()
+  const AddProd = useSelector((state) => state.Product);
+  const dispatch = useDispatch();
   // if routes cant match then return null
   const SelectProd = AddProd.find(
-    (product) => product.id == productId && product.heading == productName
+    (product) => product.id == productId && product.heading == productName,
   );
 
   if (!SelectProd) {
@@ -21,7 +23,7 @@ const ProductDetails = ({ productId, productName }) => {
   const [prodPrice, setProdPrice] = useState(SelectProd.price);
   // For Increment Amount and Quntity
   const incAmount = () => {
-    dispatch(toggleCartFalse(SelectProd.id))
+    dispatch(toggleCartFalse(SelectProd.id));
     let newAmount = amount;
     let newPrice = prodPrice;
     setAmount(newAmount + 1);
@@ -33,7 +35,7 @@ const ProductDetails = ({ productId, productName }) => {
   };
   // For Decrement Amount and Quntity
   const DecAmount = () => {
-    dispatch(toggleCartFalse(SelectProd.id))
+    dispatch(toggleCartFalse(SelectProd.id));
     let newAmount = amount;
     let newPrice = prodPrice;
     setAmount(newAmount - 1);
@@ -44,37 +46,30 @@ const ProductDetails = ({ productId, productName }) => {
     }
   };
 
-
-  const handleChange = () => {
-    
-  }
+  const handleChange = () => {};
   return (
     <div
       className="d-flex flex-column gap-4 justify-content-center"
-      style={{ height: "100%" }}
-    >
+      style={{ height: "100%" }}>
       <div className="d-flex fs-14 fw-bold text-black gap-3 ">
         <Link
           style={{ textDecoration: "none" }}
           className="text-black"
-          to={`/My-Mart/Product`}
-        >
+          to={`/My-Mart/Product`}>
           Product
         </Link>
         /
         <Link
           style={{ textDecoration: "none" }}
           className="text-black"
-          to={`/My-Mart/Categorie/${SelectProd.categorie}`}
-        >
+          to={`/My-Mart/Categorie/${SelectProd.categorie}`}>
           {SelectProd.categorie}
         </Link>
         /
         <Link
           style={{ textDecoration: "none" }}
           className="text-black"
-          to={`/My-Mart/Product/${SelectProd.heading}/${SelectProd.id}`}
-        >
+          to={`/My-Mart/Product/${SelectProd.heading}/${SelectProd.id}`}>
           {SelectProd.heading}
         </Link>
       </div>
@@ -88,8 +83,7 @@ const ProductDetails = ({ productId, productName }) => {
         <div className="d-flex justify-content-center align-items-center gap-2">
           <button
             className="fs-14 rounded-start-pill border py-2 px-3 text-white main-btn fs-5"
-            onClick={incAmount}
-          >
+            onClick={incAmount}>
             +
           </button>
           <input
@@ -102,13 +96,16 @@ const ProductDetails = ({ productId, productName }) => {
           />
           <button
             className="fs-14 rounded-end-pill border py-2 px-3 text-white main-btn fs-5"
-            onClick={DecAmount}
-          >
+            onClick={DecAmount}>
             -
           </button>
         </div>
         <WhishIcon SelectProd={SelectProd} />
-        <AddtoCart  SelectProd={SelectProd} amount={amount} setAmount={setAmount}/>
+        <AddtoCart
+          SelectProd={SelectProd}
+          amount={amount}
+          setAmount={setAmount}
+        />
       </div>
     </div>
   );

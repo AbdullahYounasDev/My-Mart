@@ -1,3 +1,5 @@
+/** @format */
+
 import React, { useState, useEffect, memo } from "react";
 import { Link } from "react-router-dom";
 import SearchBar from "../Search/SearchBar";
@@ -46,8 +48,7 @@ const Header = () => {
           <div className="container-fluid">
             <Link
               className="navbar-brand fs-1 fw-semibold main-head"
-              to="/My-Mart"
-            >
+              to="/My-Mart">
               MyMart<span className="text-green fs-1 fw-bold">.</span>
             </Link>
 
@@ -57,29 +58,25 @@ const Header = () => {
               data-bs-toggle="offcanvas"
               data-bs-target="#offcanvasNavbar"
               aria-controls="offcanvasNavbar"
-              aria-label="Toggle navigation"
-            >
+              aria-label="Toggle navigation">
               <span className="navbar-toggler-icon color-black icons fs-5 border-0 shadow-none"></span>
             </button>
             <div
               className="offcanvas offcanvas-end"
               tabIndex="-1"
               id="offcanvasNavbar"
-              aria-labelledby="offcanvasNavbarLabel"
-            >
+              aria-labelledby="offcanvasNavbarLabel">
               <div className="offcanvas-header">
                 <Link
                   className="navbar-brand fs-1 fw-semibold main-head"
-                  to="/My-Mart"
-                >
+                  to="/My-Mart">
                   MyMart<span className="text-green fs-1 fw-bold">.</span>
                 </Link>
                 <button
                   type="button"
                   className="btn-close border-0 shadow-none"
                   data-bs-dismiss="offcanvas"
-                  aria-label="Close"
-                ></button>
+                  aria-label="Close"></button>
               </div>
               <div className="offcanvas-body justify-content-center align-items-center">
                 {/* Icons for Md to Sm */}
@@ -91,8 +88,7 @@ const Header = () => {
                       data-bs-dismiss="offcanvas"
                       aria-label="Close"
                       className="border-0 bg-transparent "
-                      onClick={GetSearchBar}
-                    >
+                      onClick={GetSearchBar}>
                       <FontAwesomeIcon icon={faSearch} className="icons" />
                     </button>
                   </div>
@@ -103,16 +99,14 @@ const Header = () => {
                       aria-label="Close"
                       to="#"
                       className="border-0 bg-transparent"
-                      onClick={HandleWish}
-                    >
+                      onClick={HandleWish}>
                       <FontAwesomeIcon icon={faHeart} className="icons" />
                     </button>
                   </div>
                   <div>
-                  <Link
+                    <Link
                       className="border-0 bg-transparent"
-                      to="/My-Mart/Cart"
-                    >
+                      to="/My-Mart/Cart">
                       <FontAwesomeIcon
                         icon={faShoppingCart}
                         className="icons"
@@ -120,14 +114,14 @@ const Header = () => {
                     </Link>
                   </div>
                   <div>
-                    <button
+                    <Link
+                      to="/My-Mart/Login"
                       className="border-0 bg-transparent"
                       type="button"
                       data-bs-dismiss="offcanvas"
-                      aria-label="Close"
-                    >
+                      aria-label="Close">
                       <FontAwesomeIcon icon={faUser} className="icons" />
-                    </button>
+                    </Link>
                   </div>
                 </div>
                 <ul className="navbar-nav mb-2 mb-lg-0 gap-lg-5 fw-semibold gap-3 fs-5 d-flex justify-content-center align-items-center">
@@ -135,8 +129,7 @@ const Header = () => {
                     <Link
                       className="nav-link active"
                       aria-current="page"
-                      to="/My-Mart"
-                    >
+                      to="/My-Mart">
                       Home
                     </Link>
                   </li>
@@ -144,8 +137,7 @@ const Header = () => {
                     <Link
                       className="nav-link active"
                       aria-current="page"
-                      to="/My-Mart/Product"
-                    >
+                      to="/My-Mart/Product">
                       Product
                     </Link>
                   </li>
@@ -153,8 +145,7 @@ const Header = () => {
                     <Link
                       className="nav-link active"
                       aria-current="page"
-                      to="/My-Mart/About"
-                    >
+                      to="/My-Mart/About">
                       About
                     </Link>
                   </li>
@@ -162,8 +153,7 @@ const Header = () => {
                     <Link
                       className="nav-link active"
                       aria-current="page"
-                      to="/My-Mart/Contact"
-                    >
+                      to="/My-Mart/Contact">
                       Contact
                     </Link>
                   </li>
@@ -176,35 +166,27 @@ const Header = () => {
                 <button
                   to="#"
                   className="border-0 bg-transparent "
-                  onClick={GetSearchBar}
-                >
+                  onClick={GetSearchBar}>
                   <FontAwesomeIcon icon={faSearch} className="icons" />
                 </button>
               </div>
               <div>
-              <Link
-                      className="border-0 bg-transparent"
-                      to="/My-Mart/Cart"
-                    >
-                      <FontAwesomeIcon
-                        icon={faShoppingCart}
-                        className="icons"
-                      />
-                    </Link>
+                <Link className="border-0 bg-transparent" to="/My-Mart/Cart">
+                  <FontAwesomeIcon icon={faShoppingCart} className="icons" />
+                </Link>
               </div>
               <div className="position-relative">
                 <button
                   to="#"
                   className="border-0 bg-transparent"
-                  onClick={HandleWish}
-                >
+                  onClick={HandleWish}>
                   <FontAwesomeIcon icon={faHeart} className="icons" />
                 </button>
               </div>
               <div>
-                <button to="#" className="border-0 bg-transparent">
+                <Link to="/My-Mart/Login" className="border-0 bg-transparent">
                   <FontAwesomeIcon icon={faUser} className="icons" />
-                </button>
+                </Link>
               </div>
             </div>
           </div>

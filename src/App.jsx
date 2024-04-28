@@ -1,4 +1,5 @@
-import { useState } from "react";
+/** @format */
+
 import "./App.css";
 import "./index.css";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
@@ -14,6 +15,8 @@ import SingleProduct from "./components/Products/SingleProduct";
 import ScrollToTop from "./components/ScrollTop/ScrollTop";
 import PageNotFound from "./components/Page Not Found/PageNotFound";
 import Cart from "./components/AddToCart/Cart";
+import Login from "./components/Login/Login";
+import Signup from "./components/Signup/Signup";
 
 function App() {
   return (
@@ -37,11 +40,9 @@ function App() {
         />
         <Route exact path="/My-Mart/About" element={<About />} />
         <Route exact path="/My-Mart/Contact" element={<Contact />} />
-        <Route
-          exact
-          path="/My-Mart/Cart/"
-          element={<Cart/>}
-        />
+        <Route exact path="/My-Mart/Cart/" element={<Cart />} />
+        <Route exact path="/My-Mart/Login/" element={<Login />} />
+        <Route exact path="/My-Mart/Signup/" element={<Signup />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
       <Footer />

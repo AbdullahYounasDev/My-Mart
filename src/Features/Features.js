@@ -47,7 +47,7 @@ const Features = createSlice({
         product.carted = false; // Toggle the Carted Product state
         state.Product[ProdIndex] = product; // Update the Product in the state
       }
-    }
+    },
   },
 });
 
