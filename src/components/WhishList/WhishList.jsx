@@ -1,3 +1,5 @@
+/** @format */
+
 import React, { memo, useContext } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
@@ -7,7 +9,7 @@ import { useSelector } from "react-redux";
 
 const WhishList = ({ setOpenWhish, OpenWhish }) => {
   // Product data in AddProd
-  const AddProd = useSelector((state) => state.Product);
+  const AddProd = useSelector((state) => state.features.Product);
   //For closing whishlist
   const closeWhishList = () => {
     setOpenWhish(false);
@@ -26,16 +28,14 @@ const WhishList = ({ setOpenWhish, OpenWhish }) => {
   return (
     <div
       className="position-absolute  sub-whish-list border border-2 start-0 top-0 px-3 py-4"
-      onClick={stopProp}
-    >
+      onClick={stopProp}>
       <div className="d-flex justify-content-between align-items-center">
         <h3 className="fw-bold">
           Whish List<span className="text-green fs-3 fw-bold">.</span>
         </h3>
         <button
           className="bg-transparent border-0 icons d-flex justify-content-center align-items-center"
-          onClick={closeWhishList}
-        >
+          onClick={closeWhishList}>
           <h4>
             <FontAwesomeIcon icon={faTimes} />
           </h4>
@@ -46,13 +46,11 @@ const WhishList = ({ setOpenWhish, OpenWhish }) => {
           <div key={mapProduct.id}>
             <Link
               to={`/My-Mart/Product/${mapProduct.heading}/${mapProduct.id}`}
-              style={{ textDecoration: "none" }}
-            >
+              style={{ textDecoration: "none" }}>
               <div
                 key={mapProduct.id}
                 className="container-fluid d-flex justify-content-start align-items-center border p-2"
-                style={{ width: "315px" }}
-              >
+                style={{ width: "315px" }}>
                 <div>
                   <img
                     src={mapProduct.ImgPath}
@@ -64,8 +62,7 @@ const WhishList = ({ setOpenWhish, OpenWhish }) => {
                   <div className="ms-3 d-flex justify-content-between align-items-center mb-2">
                     <h4
                       className="text-black fw-semibold m-0 fs-5"
-                      style={{ textDecoration: "none" }}
-                    >
+                      style={{ textDecoration: "none" }}>
                       {mapProduct.heading}
                     </h4>
                     <WhishIcon SelectProd={mapProduct} />

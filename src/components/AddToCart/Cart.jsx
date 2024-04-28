@@ -15,7 +15,7 @@ const Cart = () => {
   const removeCart = (id) => {
     dispatch(toggleCartFalse(id));
   };
-  const cartProd = useSelector((state) => state.Product);
+  const cartProd = useSelector((state) => state.features.Product);
   const filteredCart = cartProd.filter((prod) => prod.carted == true);
   // Calculate total price for each product
   const totalPrices = filteredCart.map((prod) => prod.price * prod.amount);

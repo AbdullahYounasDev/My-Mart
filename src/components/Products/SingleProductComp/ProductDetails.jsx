@@ -8,7 +8,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { toggleCartFalse } from "../../../Features/Features";
 
 const ProductDetails = ({ productId, productName }) => {
-  const AddProd = useSelector((state) => state.Product);
+  const AddProd = useSelector((state) => state.features.Product);
   const dispatch = useDispatch();
   // if routes cant match then return null
   const SelectProd = AddProd.find(

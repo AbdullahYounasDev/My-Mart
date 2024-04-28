@@ -31,7 +31,7 @@ export const User = createSlice({
         (user) => user.email === email && user.password === password,
       );
       if (user) {
-        state.currentUser = user;
+        state.currentUser = user.email;
       }
     },
     Logout: (state) => {
