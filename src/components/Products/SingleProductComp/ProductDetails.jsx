@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import AddtoCart from "../../AddToCart/AddtoCart";
 import WhishIcon from "../../WhishList/WhishIcon";
 import { useSelector, useDispatch } from "react-redux";
-import { toggleCartFalse } from "../../../Features/Features";
+import { removeFromCart } from "../../../Features/User";
 
 const ProductDetails = ({ productId, productName }) => {
   const AddProd = useSelector((state) => state.features.Product);
@@ -23,7 +23,7 @@ const ProductDetails = ({ productId, productName }) => {
   const [prodPrice, setProdPrice] = useState(SelectProd.price);
   // For Increment Amount and Quntity
   const incAmount = () => {
-    dispatch(toggleCartFalse(SelectProd.id));
+    dispatch(removeFromCart(SelectProd.id));
     let newAmount = amount;
     let newPrice = prodPrice;
     setAmount(newAmount + 1);
@@ -35,7 +35,7 @@ const ProductDetails = ({ productId, productName }) => {
   };
   // For Decrement Amount and Quntity
   const DecAmount = () => {
-    dispatch(toggleCartFalse(SelectProd.id));
+    dispatch(removeFromCart(SelectProd.id));
     let newAmount = amount;
     let newPrice = prodPrice;
     setAmount(newAmount - 1);

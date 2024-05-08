@@ -43,6 +43,10 @@
   color: #33cccc;
   scale: 1.2;
 }
+.icons-30:hover {
+  color: #33cccc;
+  scale: 1.2;
+}
 .nav-link {
   transition: 0.4s ease-in-out;
 }
@@ -154,8 +158,23 @@
   max-height: 100vh;
   overflow-y: scroll;
 }
+.whishCheck {
+  color: #33cccc;
+}
+.whishProd {
+  transition: 0.5s ease-in-out;
+  transform-origin: bottom;
+}
+.whishProd:hover {
+  border: 1px solid #33cccc !important;
+}
 .cartItem {
   border: 0;
+}
+Link,
+a {
+  list-style: none !important;
+  text-decoration: none !important;
 }
 @keyframes animWhishList {
   0% {

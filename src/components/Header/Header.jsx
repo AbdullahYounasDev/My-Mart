@@ -116,10 +116,7 @@ const Header = () => {
                   <div>
                     <Link
                       to="/My-Mart/Login"
-                      className="border-0 bg-transparent"
-                      type="button"
-                      data-bs-dismiss="offcanvas"
-                      aria-label="Close">
+                      className="border-0 bg-transparent">
                       <FontAwesomeIcon icon={faUser} className="icons" />
                     </Link>
                   </div>

@@ -1,12 +1,12 @@
+/** @format */
+
 import React, { memo, useContext } from "react";
 import { Link } from "react-router-dom";
-import Product from "./Product";
-import AddtoCart from "../AddToCart/AddtoCart";
-import WhishIcon from "../WhishList/WhishIcon";
-import { AppContext } from "../Context/ProductContext";
+import { useSelector } from "react-redux";
 
 const FeatProducts = () => {
-  const AddProd = useContext(AppContext);
+  const AddProd = useSelector((state) => state.features.Product);
+
   const filterProduct = AddProd.filter((prod) => prod.featured === true);
   return (
     <>
@@ -22,8 +22,7 @@ const FeatProducts = () => {
               <Link
                 to={`/My-Mart/Product/${mapProduct.heading}/${mapProduct.id}`}
                 className="link text-white fw-semibold"
-                style={{ textDecoration: "none", fontSize: "14px" }}
-              >
+                style={{ textDecoration: "none", fontSize: "14px" }}>
                 <div className="card d-flex justify-content-center align-items-center flex-column categories">
                   <img
                     src={mapProduct.ImgPath}
@@ -38,8 +37,7 @@ const FeatProducts = () => {
                   <div className="card-body w-100 d-flex align-items-center justify-content-center flex-column">
                     <h3
                       className="text-center p-0 fw-semibold"
-                      style={{ color: "gray", fontSize: "14px" }}
-                    >
+                      style={{ color: "gray", fontSize: "14px" }}>
                       {mapProduct.categorie}
                     </h3>
                     <h2
@@ -48,16 +46,14 @@ const FeatProducts = () => {
                         whiteSpace: "nowrap",
                         overflow: "hidden",
                         textOverflow: "ellipsis",
-                      }}
-                    >
+                      }}>
                       {mapProduct.heading}
                     </h2>
                     <div className="d-flex justify-content-center align-items-center w-100">
                       <div>
                         <h4
                           className="p-0 text-green fw-semibold m-0 text-align-center"
-                          style={{ fontSize: "16px" }}
-                        >
+                          style={{ fontSize: "16px" }}>
                           {mapProduct.price}.00 Rs
                         </h4>
                       </div>

@@ -1,3 +1,5 @@
+/** @format */
+
 @media screen and (max-width: 991px) {
   .prod-img {
     height: 300px !important;
@@ -5,8 +7,11 @@
   .sub-whish-list {
     width: 45% !important;
   }
-  .cartItem{
+  .cartItem {
     border: 0.5px solid gray;
+  }
+  .cartIProdmage {
+    height: 200px !important;
   }
 }
 @media screen and (max-width: 768px) {

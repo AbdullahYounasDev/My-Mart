@@ -1,8 +1,10 @@
+/** @format */
+
 import React, { useState, useContext, memo } from "react";
 import { Link } from "react-router-dom";
-import { AppContext } from "../Context/ProductContext";
+import { useSelector } from "react-redux";
 const Products = () => {
-  const AddProd = useContext(AppContext);
+  const AddProd = useSelector((state) => state.features.Product);
 
   return (
     <>
@@ -19,8 +21,7 @@ const Products = () => {
               <Link
                 to={`/My-Mart/Product/${mapProduct.heading}/${mapProduct.id}`}
                 className="link text-white fw-semibold m-0 p-0 text-center"
-                style={{ textDecoration: "none", fontSize: "14px" }}
-              >
+                style={{ textDecoration: "none", fontSize: "14px" }}>
                 <div className="card d-flex justify-content-center align-items-center flex-column categories">
                   <img
                     src={mapProduct.ImgPath}
@@ -35,8 +36,7 @@ const Products = () => {
                   <div className="card-body w-100 d-flex justify-content-center align-items-center flex-column">
                     <h3
                       className="text-center p-0 fw-semibold"
-                      style={{ color: "gray", fontSize: "14px" }}
-                    >
+                      style={{ color: "gray", fontSize: "14px" }}>
                       {mapProduct.categorie}
                     </h3>
                     <h2
@@ -45,16 +45,14 @@ const Products = () => {
                         whiteSpace: "nowrap",
                         overflow: "hidden",
                         textOverflow: "ellipsis",
-                      }}
-                    >
+                      }}>
                       {mapProduct.heading}
                     </h2>
                     <div className="d-flex justify-content-center align-items-center w-100">
                       <div>
                         <h4
                           className="p-0 text-green fw-semibold m-0 text-align-center"
-                          style={{ fontSize: "16px" }}
-                        >
+                          style={{ fontSize: "16px" }}>
                           {mapProduct.price}.00 Rs
                         </h4>
                       </div>

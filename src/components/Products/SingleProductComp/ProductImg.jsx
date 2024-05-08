@@ -1,11 +1,13 @@
-import React, { memo, useContext } from "react";
-import { AppContext } from "../../Context/ProductContext";
+/** @format */
+
+import React, { memo } from "react";
+import { useSelector } from "react-redux";
 
 const ProductImg = ({ productId, productName }) => {
   // if routes cant match then return null
-  const AddProd = useContext(AppContext);
+  const AddProd = useSelector((state) => state.features.Product);
   const SelectProd = AddProd.find(
-    (product) => product.id == productId && product.heading == productName
+    (product) => product.id == productId && product.heading == productName,
   );
   if (!SelectProd) {
     return null;
