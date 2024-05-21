@@ -6,6 +6,7 @@ import AddtoCart from "../../AddToCart/AddtoCart";
 import WhishIcon from "../../WhishList/WhishIcon";
 import { useSelector, useDispatch } from "react-redux";
 import { removeFromCart } from "../../../Features/User";
+import BuyNow from "../../BuyNow/BuyNow";
 
 const ProductDetails = ({ productId, productName }) => {
   const AddProd = useSelector((state) => state.features.Product);
@@ -106,6 +107,7 @@ const ProductDetails = ({ productId, productName }) => {
           amount={amount}
           setAmount={setAmount}
         />
+        <BuyNow SelectProd={SelectProd} amount={amount} setAmount={setAmount} />
       </div>
     </div>
   );

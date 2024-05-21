@@ -34,7 +34,7 @@ const Cart = () => {
     <div className="container-lg container-fluid my-lg-4 my-2 border p-3">
       <div className="d-flex flex-wrap justify-content-between align-items-center">
         <h2 className="fs-3 fw-bold">My Cart</h2>
-        <div className="d-flex flex-wrap justify-content-between align-items-center gap-5">
+        <div className="d-flex flex-wrap justify-content-between align-items-center gap-sm-5 gap-2 m-sm-0 mt-3">
           <h6 style={{ float: "right" }} className="fw-bold">
             Total Amount :{" "}
             <span className="text-green">{cartTotal + ".00 Rs"}</span>

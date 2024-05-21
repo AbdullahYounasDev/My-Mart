@@ -2,7 +2,7 @@
 
 import React from "react";
 import { useFormik } from "formik";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { LoginSchema } from "../../Schemas/LoginSchema";
 import { useDispatch, useSelector } from "react-redux";
 import { LogIn } from "../../Features/User";
@@ -14,6 +14,7 @@ const initialValue = {
 
 const Login = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate(); // Add this line to use navigate
   const user = useSelector((state) => state.user.users);
 
   const checkEmail = (email) => {
@@ -27,10 +28,11 @@ const Login = () => {
       validationSchema: LoginSchema,
       onSubmit: (val, { resetForm }) => {
         if (checkEmail(val.email)) {
-          alert("You Are Not Registered Plz Register To Login");
+          alert("You Are Not Registered. Please Register To Login");
         } else {
           dispatch(LogIn(val));
           resetForm();
+          navigate("/My-Mart/Profile");
         }
       },
     });

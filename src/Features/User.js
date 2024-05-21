@@ -13,17 +13,29 @@ export const User = createSlice({
   initialState,
   reducers: {
     SignUp: (state, action) => {
-      const { name, email, password, confirmPassword } = action.payload;
+      const {
+        name,
+        email,
+        password,
+        confirmPassword,
+        country,
+        city,
+        fullAddress,
+      } = action.payload;
       const newUser = {
         name,
         email,
         password,
         confirmPassword,
+        country,
+        city,
+        fullAddress,
         userCart: [],
         userWishlist: [],
         userOrders: [],
       };
       state.users.push(newUser);
+      state.currentUser = email; // Set the current user to the new user's email
     },
     LogIn: (state, action) => {
       const { email, password } = action.payload;

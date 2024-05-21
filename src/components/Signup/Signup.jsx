@@ -12,29 +12,41 @@ const initialValue = {
   email: "",
   password: "",
   confirmPassword: "",
+  country: "",
+  city: "",
+  fullAddress: "",
 };
 
-const Login = () => {
+const Signup = () => {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user.users);
+
   // Function to check if email is in use or not
   const checkEmail = (email) => {
     const sameEmail = user.filter((subUser) => subUser.email === email);
     return sameEmail.length === 0; // Return true if the array is empty, indicating the email is not in use
   };
-  const { values, errors, handleChange, touched, handleBlur, handleSubmit } =
-    useFormik({
-      initialValues: initialValue,
-      validationSchema: SignUpSchema,
-      onSubmit: (val, { resetForm }) => {
-        if (checkEmail(val.email)) {
-          dispatch(SignUp(val));
-          resetForm();
-        } else {
-          alert(val.email + " is already in use");
-        }
-      },
-    });
+
+  const {
+    values,
+    errors,
+    handleChange,
+    touched,
+    handleBlur,
+    handleSubmit,
+    resetForm,
+  } = useFormik({
+    initialValues: initialValue,
+    validationSchema: SignUpSchema,
+    onSubmit: (val) => {
+      if (checkEmail(val.email)) {
+        dispatch(SignUp(val));
+        resetForm();
+      } else {
+        alert(val.email + " is already in use");
+      }
+    },
+  });
 
   return (
     <div className="container-lg container-fluid d-flex align-items-center flex-column mt-5">
@@ -102,6 +114,43 @@ const Login = () => {
             </p>
           ) : null}
         </div>
+        <p className="align-self-start text-green fw-semibold">
+          Please fill out Your Address Correctly
+        </p>
+        <div className="w-100 d-flex gap-2 ">
+          <input
+            type="text"
+            name="country"
+            placeholder="Country"
+            value={values.country}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            className="text-black bg-transparent border newsLetterInp p-2 w-50 my-2 mr-2"
+          />
+          <input
+            type="text"
+            name="city"
+            placeholder="City"
+            value={values.city}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            className="text-black bg-transparent border newsLetterInp p-2 w-50 my-2 ml-2"
+          />
+        </div>
+        <div className="w-100">
+          <input
+            type="text"
+            name="fullAddress"
+            placeholder="Full Address"
+            value={values.fullAddress}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            className="text-black bg-transparent border newsLetterInp p-2 w-100 my-2"
+          />
+          {errors.fullAddress && touched.fullAddress ? (
+            <p className="text-green fs-14 fw-semibold">{errors.fullAddress}</p>
+          ) : null}
+        </div>
         <button
           className="rounded-5 border p-2 text-white main-btn"
           onClick={handleSubmit}>
@@ -118,4 +167,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Signup;

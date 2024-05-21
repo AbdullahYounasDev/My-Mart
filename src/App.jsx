@@ -17,6 +17,7 @@ import PageNotFound from "./components/Page Not Found/PageNotFound";
 import Cart from "./components/AddToCart/Cart";
 import Login from "./components/Login/Login";
 import Signup from "./components/Signup/Signup";
+import MyProfile from "./components/MyProfile/MyProfile";
 
 function App() {
   return (
@@ -43,6 +44,7 @@ function App() {
         <Route exact path="/My-Mart/Cart/" element={<Cart />} />
         <Route exact path="/My-Mart/Login/" element={<Login />} />
         <Route exact path="/My-Mart/Signup/" element={<Signup />} />
+        <Route path="/My-Mart/Profile" element={<MyProfile />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
       <Footer />
