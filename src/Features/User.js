@@ -89,12 +89,32 @@ export const User = createSlice({
         }
       }
     },
+    LogOut: (state) => {
+      state.currentUser = null;
+    },
+    updateUserProfile: (state, action) => {
+      const { name, password, confirmPassword, country, city, fullAddress } =
+        action.payload;
+      const regUser = state.users.find(
+        (User) => User.email === state.currentUser,
+      );
+      if (regUser) {
+        regUser.name = name;
+        regUser.password = password;
+        regUser.confirmPassword = confirmPassword;
+        regUser.country = country;
+        regUser.city = city;
+        regUser.fullAddress = fullAddress;
+      }
+    },
   },
 });
 
 export const {
   SignUp,
   LogIn,
+  updateUserProfile,
+  LogOut,
   userCart,
   removeFromCart,
   userWishlist,

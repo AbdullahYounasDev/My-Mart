@@ -1,6 +1,6 @@
 /** @format */
 
-import React, { useState, useEffect, memo } from "react";
+import React, { useState, memo } from "react";
 import { Link } from "react-router-dom";
 import SearchBar from "../Search/SearchBar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -12,8 +12,10 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import SearchResDiv from "../Search/SearchResDiv";
 import WhishList from "../WhishList/WhishList";
+import { useSelector } from "react-redux";
 
 const Header = () => {
+  const currentUser = useSelector((state) => state.user.currentUser);
   //For Search Bar
   const [SearchMe, setSearchMe] = useState(false);
   const GetSearchBar = (e) => {
@@ -115,7 +117,7 @@ const Header = () => {
                   </div>
                   <div>
                     <Link
-                      to="/My-Mart/Login"
+                      to={`/My-Mart/${currentUser ? `Profile` : `Login`}`}
                       className="border-0 bg-transparent">
                       <FontAwesomeIcon icon={faUser} className="icons" />
                     </Link>
@@ -181,7 +183,9 @@ const Header = () => {
                 </button>
               </div>
               <div>
-                <Link to="/My-Mart/Login" className="border-0 bg-transparent">
+                <Link
+                  to={`/My-Mart/${currentUser ? `Profile` : `Login`}`}
+                  className="border-0 bg-transparent">
                   <FontAwesomeIcon icon={faUser} className="icons" />
                 </Link>
               </div>

@@ -2,19 +2,26 @@
 
 import {
   faBoxesPacking,
-  faDoorClosed,
   faDoorOpen,
   faUser,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { LogOut } from "../../Features/User";
+import { Link, useNavigate } from "react-router-dom";
 
 const MyProfile = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const currentUser = useSelector((state) => state.user.currentUser);
   const user = useSelector((state) =>
     state.user.users.find((u) => u.email === currentUser),
   );
+  const handleLogut = () => {
+    dispatch(LogOut());
+    navigate("/My-Mart/Login");
+  };
 
   return !user ? (
     <div>No user logged in</div>
@@ -54,14 +61,19 @@ const MyProfile = () => {
           </div>
         </div>
         <div className="d-flex gap-3 flex-wrap">
-          <button className="fs-14 rounded-5 border-0 p-2 px-sm-4 px-3  text-white text-center main-btn fs-5 shadow-lg my-2 d-flex align-items-center justify-content-center">
+          <Link
+            to={"/My-Mart/Update-Profile"}
+            className="fs-14 rounded-5 border-0 p-2 px-sm-4 px-3  text-white text-center main-btn fs-5 shadow-lg my-2 d-flex align-items-center justify-content-center">
             Update <FontAwesomeIcon className="mx-2" icon={faUser} />
-          </button>
+          </Link>
           <button className="fs-14 rounded-5 border-0 p-2 px-sm-4 px-3  text-white text-center main-btn fs-5 shadow-lg my-2 d-flex align-items-center justify-content-center">
             Orders <FontAwesomeIcon className="mx-2" icon={faBoxesPacking} />
           </button>
-          <button className="fs-14 rounded-5 border-0 p-2 px-sm-4 px-3  text-white text-center main-btn fs-5 shadow-lg my-2 d-flex align-items-center justify-content-center">
-            Logout <FontAwesomeIcon className="mx-2" icon={faDoorOpen} />
+          <button
+            className="fs-14 rounded-5 border-0 p-2 px-sm-4 px-3  text-white text-center main-btn fs-5 shadow-lg my-2 d-flex align-items-center justify-content-center"
+            onClick={handleLogut}>
+            Logout
+            <FontAwesomeIcon className="mx-2" icon={faDoorOpen} />
           </button>
         </div>
       </div>

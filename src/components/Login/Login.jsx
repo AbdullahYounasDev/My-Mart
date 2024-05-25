@@ -14,12 +14,14 @@ const initialValue = {
 
 const Login = () => {
   const dispatch = useDispatch();
-  const navigate = useNavigate(); // Add this line to use navigate
+  const navigate = useNavigate();
   const user = useSelector((state) => state.user.users);
 
-  const checkEmail = (email) => {
-    const sameEmail = user.filter((subUser) => subUser.email === email);
-    return sameEmail.length === 0; // Return true if the array is empty, indicating the email is not in use
+  const checkCredentials = (email, password) => {
+    const sameUser = user.find(
+      (subUser) => subUser.email === email && subUser.password === password,
+    );
+    return sameUser; // Return the user object if found, otherwise undefined
   };
 
   const { values, errors, handleChange, touched, handleBlur, handleSubmit } =
@@ -27,8 +29,11 @@ const Login = () => {
       initialValues: initialValue,
       validationSchema: LoginSchema,
       onSubmit: (val, { resetForm }) => {
-        if (checkEmail(val.email)) {
-          alert("You Are Not Registered. Please Register To Login");
+        const user = checkCredentials(val.email, val.password);
+        if (!user) {
+          alert(
+            "You are not registered with this email and password. Please register to login.",
+          );
         } else {
           dispatch(LogIn(val));
           resetForm();

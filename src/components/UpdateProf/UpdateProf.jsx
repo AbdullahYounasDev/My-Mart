@@ -2,53 +2,50 @@
 
 import React from "react";
 import { useFormik } from "formik";
-import { Link, useNavigate } from "react-router-dom";
-import { SignUpSchema } from "../../Schemas/SginupSchema";
+import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { SignUp } from "../../Features/User";
+import { useState } from "react";
+import { UpdateProfSchema } from "../../Schemas/UpdateProfSchema";
+import { updateUserProfile } from "../../Features/User";
 
-const initialValue = {
-  name: "",
-  email: "",
-  password: "",
-  confirmPassword: "",
-  country: "",
-  city: "",
-  fullAddress: "",
-};
-
-const Signup = () => {
+const UpdateProf = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const user = useSelector((state) => state.user.users);
+  const [OldPass, setOldPass] = useState("");
 
-  // Function to check if email is in use or not
-  const checkEmail = (email) => {
-    const sameEmail = user.filter((subUser) => subUser.email === email);
-    return sameEmail.length === 0; // Return true if the array is empty, indicating the email is not in use
+  const currentUser = useSelector((state) => state.user.currentUser);
+  const user = useSelector((state) =>
+    state.user.users.find((u) => u.email === currentUser),
+  );
+  const handleOldPassInp = (e) => {
+    setOldPass(e.target.value);
   };
+  if (!currentUser) {
+    return "No User Signup";
+  }
 
-  const {
-    values,
-    errors,
-    handleChange,
-    touched,
-    handleBlur,
-    handleSubmit,
-    resetForm,
-  } = useFormik({
-    initialValues: initialValue,
-    validationSchema: SignUpSchema,
-    onSubmit: (val) => {
-      if (checkEmail(val.email)) {
-        dispatch(SignUp(val));
-        resetForm();
-        navigate("/My-Mart/Profile");
-      } else {
-        alert(val.email + " is already in use");
-      }
-    },
-  });
+  const initialValue = {
+    name: user.name,
+    password: user.password,
+    confirmPassword: user.confirmPassword,
+    country: user.country,
+    city: user.city,
+    fullAddress: user.fullAddress,
+  };
+  const { values, errors, handleChange, touched, handleSubmit, resetForm } =
+    useFormik({
+      initialValues: initialValue,
+      validationSchema: UpdateProfSchema,
+      onSubmit: (val) => {
+        if (OldPass !== user.password) {
+          alert("Your Old Password Cant Match with Original Passowrd");
+          setOldPass("");
+        } else {
+          dispatch(updateUserProfile(val));
+          navigate("/My-Mart/Profile");
+        }
+      },
+    });
 
   return (
     <div className="container-lg container-fluid d-flex align-items-center flex-column mt-5">
@@ -56,16 +53,15 @@ const Signup = () => {
         className="border d-flex justify-content-center align-items-center flex-column p-3 gap-3"
         style={{ maxWidth: "500px", minWidth: "300px" }}>
         <h2 className="fs-3 fw-bold">
-          Sign Up<span className="text-green fs-1 fw-bold">.</span>
+          Update Your Profile<span className="text-green fs-1 fw-bold">.</span>
         </h2>
         <div className="w-100">
           <input
             type="text"
             name="name"
-            placeholder="Name (Required)"
+            placeholder="New Name (Required)"
             value={values.name}
             onChange={handleChange}
-            onBlur={handleBlur}
             className="text-black bg-transparent border newsLetterInp p-2 w-100 my-2"
           />
           {errors.name && touched.name ? (
@@ -73,41 +69,41 @@ const Signup = () => {
           ) : null}
         </div>
         <div className="w-100">
+          <p className="m-0 text-green fw-semibold">
+            Enter Old Password To Update Overall Profile
+          </p>
           <input
-            type="email"
-            name="email"
-            placeholder="Email Address (Required)"
-            value={values.email}
-            onChange={handleChange}
-            onBlur={handleBlur}
+            type="password"
+            name="password "
+            placeholder="Old Password (Required)"
+            value={OldPass}
+            onChange={handleOldPassInp}
             className="text-black bg-transparent border newsLetterInp p-2 w-100 my-2"
           />
-          {errors.email && touched.email ? (
-            <p className="text-green fs-14 fw-semibold">{errors.email}</p>
-          ) : null}
         </div>
         <div className="w-100">
+          <p className="m-0 text-green fw-semibold">Enter New Password</p>
           <input
             type="password"
             name="password"
-            placeholder="Password (Required)"
+            placeholder="New Password (Required)"
             value={values.password}
             onChange={handleChange}
-            onBlur={handleBlur}
             className="text-black bg-transparent border newsLetterInp p-2 w-100 my-2"
           />
           {errors.password && touched.password ? (
             <p className="text-green fs-14 fw-semibold">{errors.password}</p>
           ) : null}
         </div>
+
         <div className="w-100">
+          <p className="m-0 text-green fw-semibold">Confirm New Password</p>
           <input
             type="password"
             name="confirmPassword"
             placeholder="Confirm Password (Required)"
             value={values.confirmPassword}
             onChange={handleChange}
-            onBlur={handleBlur}
             className="text-black bg-transparent border newsLetterInp p-2 w-100 my-2"
           />
           {errors.confirmPassword && touched.confirmPassword ? (
@@ -116,15 +112,12 @@ const Signup = () => {
             </p>
           ) : null}
         </div>
-        <p className="align-self-start text-green fw-semibold">
-          Please fill out Your Address Correctly
-        </p>
         <div className="w-100 d-flex gap-2 ">
           <div className="w-50">
             <input
               type="text"
               name="country"
-              placeholder="Country (Required)"
+              placeholder="Change Country (Required)"
               value={values.country}
               onChange={handleChange}
               className="text-black bg-transparent border newsLetterInp p-2 w-50 my-2 mr-2 w-100"
@@ -137,7 +130,7 @@ const Signup = () => {
             <input
               type="text"
               name="city"
-              placeholder="City (Required)"
+              placeholder="New City (Required)"
               value={values.city}
               onChange={handleChange}
               className="text-black bg-transparent border newsLetterInp p-2 w-50 my-2 ml-2 w-100"
@@ -151,30 +144,25 @@ const Signup = () => {
           <input
             type="text"
             name="fullAddress"
-            placeholder="Full Address (Required)"
+            placeholder="New Full Address (Required)"
             value={values.fullAddress}
             onChange={handleChange}
-            onBlur={handleBlur}
             className="text-black bg-transparent border newsLetterInp p-2 w-100 my-2"
           />
           {errors.fullAddress && touched.fullAddress ? (
             <p className="text-green fs-14 fw-semibold">{errors.fullAddress}</p>
           ) : null}
         </div>
-        <button
+        <input
+          type="submit"
           className="rounded-5 border p-2 text-white main-btn"
-          onClick={handleSubmit}>
-          Create Account
-        </button>
-        <div className="mt-3 text-start w-100" style={{ fontSize: "12px" }}>
-          <span>Already Have Account</span>
-          <Link to="/My-Mart/Login" style={{ textDecoration: "none" }}>
-            <span className=" text-green fw-bold"> Login Now</span>
-          </Link>
-        </div>
+          onClick={handleSubmit}
+          style={{ outline: "none" }}
+          value={"Update Now"}
+        />
       </div>
     </div>
   );
 };
 
-export default Signup;
+export default UpdateProf;
