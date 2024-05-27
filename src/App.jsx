@@ -19,6 +19,7 @@ import Login from "./components/Login/Login";
 import Signup from "./components/Signup/Signup";
 import MyProfile from "./components/MyProfile/MyProfile";
 import UpdateProf from "./components/UpdateProf/UpdateProf";
+import OrderPage from "./components/Order/OrderPage";
 
 function App() {
   return (
@@ -47,6 +48,7 @@ function App() {
         <Route exact path="/My-Mart/Signup/" element={<Signup />} />
         <Route exact path="/My-Mart/Update-Profile/" element={<UpdateProf />} />
         <Route path="/My-Mart/Profile" element={<MyProfile />} />
+        <Route path="/My-Mart/Order" element={<OrderPage />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
       <Footer />

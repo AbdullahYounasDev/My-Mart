@@ -17,12 +17,12 @@ const UpdateProf = () => {
   const user = useSelector((state) =>
     state.user.users.find((u) => u.email === currentUser),
   );
-  const handleOldPassInp = (e) => {
-    setOldPass(e.target.value);
-  };
   if (!currentUser) {
     return "No User Signup";
   }
+  const handleOldPassInp = (e) => {
+    setOldPass(e.target.value);
+  };
 
   const initialValue = {
     name: user.name,
@@ -42,7 +42,7 @@ const UpdateProf = () => {
           setOldPass("");
         } else {
           dispatch(updateUserProfile(val));
-          navigate("/My-Mart/Profile");
+          navigate(-1);
         }
       },
     });
