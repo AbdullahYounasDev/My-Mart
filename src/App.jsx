@@ -20,6 +20,8 @@ import Signup from "./components/Signup/Signup";
 import MyProfile from "./components/MyProfile/MyProfile";
 import UpdateProf from "./components/UpdateProf/UpdateProf";
 import OrderPage from "./components/Order/OrderPage";
+import OrderCartProd from "./components/Order/OrderCartProd";
+import OrderShow from "./components/Order/OrderShow";
 
 function App() {
   return (
@@ -49,6 +51,8 @@ function App() {
         <Route exact path="/My-Mart/Update-Profile/" element={<UpdateProf />} />
         <Route path="/My-Mart/Profile" element={<MyProfile />} />
         <Route path="/My-Mart/Order" element={<OrderPage />} />
+        <Route path="/My-Mart/CartOrder" element={<OrderCartProd />} />
+        <Route path="/My-Mart/OrderDetails" element={<OrderShow />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
       <Footer />

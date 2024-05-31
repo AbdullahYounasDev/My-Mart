@@ -23,10 +23,8 @@ const AddtoCart = ({ SelectProd, amount, setAmount }) => {
     if (currentUser) {
       if (isAddedToCart) {
         dispatch(removeFromCart(SelectProd.id));
-        setChangeColor(false);
       } else {
         dispatch(userCart({ SelectProd: SelectProd, amount: amount }));
-        setChangeColor(true);
       }
       setAmount(1);
     }

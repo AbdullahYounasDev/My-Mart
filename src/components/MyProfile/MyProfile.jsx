@@ -66,9 +66,11 @@ const MyProfile = () => {
             className="fs-14 rounded-5 border-0 p-2 px-sm-4 px-3  text-white text-center main-btn fs-5 shadow-lg my-2 d-flex align-items-center justify-content-center">
             Update <FontAwesomeIcon className="mx-2" icon={faUser} />
           </Link>
-          <button className="fs-14 rounded-5 border-0 p-2 px-sm-4 px-3  text-white text-center main-btn fs-5 shadow-lg my-2 d-flex align-items-center justify-content-center">
+          <Link
+            to={"/My-Mart/OrderDetails"}
+            className="fs-14 rounded-5 border-0 p-2 px-sm-4 px-3  text-white text-center main-btn fs-5 shadow-lg my-2 d-flex align-items-center justify-content-center">
             Orders <FontAwesomeIcon className="mx-2" icon={faBoxesPacking} />
-          </button>
+          </Link>
           <button
             className="fs-14 rounded-5 border-0 p-2 px-sm-4 px-3  text-white text-center main-btn fs-5 shadow-lg my-2 d-flex align-items-center justify-content-center"
             onClick={handleLogut}>

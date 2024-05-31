@@ -69,6 +69,14 @@ export const User = createSlice({
         }
       }
     },
+    cartClear: (state) => {
+      const regUser = state.users.find(
+        (User) => User.email === state.currentUser,
+      );
+      if (regUser) {
+        regUser.userCart = [];
+      }
+    },
     userWishlist: (state, action) => {
       const regUser = state.users.find(
         (User) => User.email == state.currentUser,
@@ -107,6 +115,14 @@ export const User = createSlice({
         regUser.fullAddress = fullAddress;
       }
     },
+    addToOrders: (state, action) => {
+      const regUser = state.users.find(
+        (user) => user.email === state.currentUser,
+      );
+      if (regUser) {
+        regUser.userOrders.push(action.payload); // Push entire order object to userOrders
+      }
+    },
   },
 });
 
@@ -117,7 +133,9 @@ export const {
   LogOut,
   userCart,
   removeFromCart,
+  cartClear,
   userWishlist,
   removeFromWhishlist,
+  addToOrders,
 } = User.actions;
 export default User.reducer;

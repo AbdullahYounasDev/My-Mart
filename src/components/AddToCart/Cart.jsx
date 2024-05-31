@@ -5,7 +5,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import { useSelector, useDispatch } from "react-redux";
 import { removeFromCart } from "../../Features/User";
-import BuyNow from "../BuyNow/BuyNow";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 
@@ -127,12 +126,13 @@ const Cart = () => {
         </button>
         {cartProd.length > 0 ? (
           <>
-            <button
+            <Link
+              to={"/My-Mart/CartOrder"}
               className="fs-14 rounded-5 border-0 p-2 px-sm-4 px-3 mx-2 mb-3 mt-4 text-white text-center main-btn shadow-lg d-flex align-items-center justify-content-center"
               style={{ background: "#ff6683" }}>
               {" "}
               Buy All
-            </button>
+            </Link>
           </>
         ) : null}
       </div>
